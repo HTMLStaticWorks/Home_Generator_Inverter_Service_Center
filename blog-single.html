@@ -112,7 +112,8 @@
   <header class="header">
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -121,7 +122,7 @@
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
           <li><a href="blog.html" class="nav-link active">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
@@ -146,10 +147,11 @@
   <aside class="mobile-drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
       <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
-        <i class="ph ph-x"></i>
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
     
@@ -158,18 +160,19 @@
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
         <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
       </ul>
     </nav>
 
     <div class="mobile-drawer-actions">
-      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
-        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
-        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+        <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
+        <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Login</a>
     </div>
   </aside>
 
@@ -274,7 +277,10 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <div class="footer-logo">
+          <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+          <span class="logo-text">GRID <span>SYSTEMS</span></span>
+        </div>
         <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -289,7 +295,7 @@
           <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
           <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
           <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
-          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+          <li><a href="amc-plans.html" class="footer-link">AMC Contract Plans</a></li>
         </ul>
       </div>
 
@@ -308,7 +314,7 @@
         <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
         <form id="newsletter-form" data-validate class="newsletter-form">
           <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
-          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+          <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe to Newsletter"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>

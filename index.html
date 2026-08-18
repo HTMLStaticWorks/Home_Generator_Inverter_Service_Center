@@ -24,7 +24,8 @@
   <header class="header">
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -33,7 +34,7 @@
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
@@ -58,10 +59,11 @@
   <aside class="mobile-drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
       <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
-        <i class="ph ph-x"></i>
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
     
@@ -70,19 +72,19 @@
         <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
         <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
       </ul>
     </nav>
 
     <div class="mobile-drawer-actions">
-      <!-- Theme and RTL Toggles live in drawer for mobile viewports -->
-      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
-        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
-        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+        <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
+        <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Login</a>
     </div>
   </aside>
 
@@ -180,7 +182,7 @@
             <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <h3 class="card-title">AMC Service Support</h3>
             <p class="card-desc">Premium Annual Maintenance Contract coverage featuring 24/7 dynamic sensor reporting, fuel testing, and priority dispatch guarantee.</p>
-            <a href="services.html#amc-plans" class="btn-text">View details</a>
+            <a href="amc-plans.html" class="btn-text">View details</a>
           </div>
         </div>
       </div>
@@ -218,7 +220,7 @@
           <p>Engineered for minimal footprint, quiet operations, and zero energy delay.</p>
         </div>
 
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card-grid">
           <div class="premium-card">
             <div class="card-img-wrapper">
               <img src="assets/images/Acoustic Panel Gaming Room Setup.jpg" alt="Acoustic Shielding">
@@ -266,6 +268,10 @@
         </div>
 
         <div class="showcase-slider">
+          <!-- Slider Navigation Arrows -->
+          <button class="slider-arrow slider-arrow-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="slider-arrow slider-arrow-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+
           <div class="slider-container">
             <!-- Slide 1 -->
             <div class="slider-item">
@@ -360,39 +366,69 @@
           <p>Read opinions of luxury homeowners and operations managers who rely on our installations.</p>
         </div>
 
-        <div class="testimonial-carousel">
-          <div class="testimonial-track">
-            <!-- Slide 1 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                "GRID SYSTEMS transformed our generator room into an architectural highlight. The sound buffering is mind-blowing — we cannot hear the system running from our living terrace."
-              </div>
-              <div class="testimonial-author">
-                <img src="assets/images/download.jpg" alt="Marcus Sterling" class="testimonial-author-avatar">
-                <div style="text-align: left;">
-                  <div class="testimonial-author-name">Marcus Sterling</div>
-                  <div class="testimonial-author-title">Estate Owner, Beverly Heights</div>
-                </div>
-              </div>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
+          <!-- Testimonial Card 1 -->
+          <div class="premium-card testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
-
-            <!-- Slide 2 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                "With highly sensitive servers and constant computational loads, we required zero backup delay. GRID systems integrated a battery system that transitions instantly. Outstanding design."
-              </div>
-              <div class="testimonial-author">
-                <img src="assets/images/download (1).jpg" alt="Helena Vance" class="testimonial-author-avatar">
-                <div style="text-align: left;">
-                  <div class="testimonial-author-name">Helena Vance</div>
-                  <div class="testimonial-author-title">Operations Lead, Apex Computing</div>
-                </div>
+            <p class="testimonial-text">
+              "GRID SYSTEMS transformed our generator room into an architectural highlight. The sound buffering is mind-blowing — we cannot hear the system running from our living terrace."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/download.jpg" alt="Marcus Sterling" class="testimonial-avatar">
+              <div style="text-align: left;">
+                <h4 class="author-name">Marcus Sterling</h4>
+                <span class="author-title">Estate Owner, Beverly Heights</span>
               </div>
             </div>
           </div>
 
-          <!-- Carousel Controls -->
-          <div class="slider-controls" style="margin-top: var(--space-8);"></div>
+          <!-- Testimonial Card 2 -->
+          <div class="premium-card testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "With highly sensitive servers and constant computational loads, we required zero backup delay. GRID systems integrated a battery system that transitions instantly. Outstanding design."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/download (1).jpg" alt="Helena Vance" class="testimonial-avatar">
+              <div style="text-align: left;">
+                <h4 class="author-name">Helena Vance</h4>
+                <span class="author-title">Operations Lead, Apex Computing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="premium-card testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "As custom villa architects, we used to struggle hiding unsightly emergency backup units. GRID's quiet stone enclosures fit seamlessly into our structural facade plans. Extraordinary execution."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/download.jpg" alt="David Ross" class="testimonial-avatar">
+              <div style="text-align: left;">
+                <h4 class="author-name">David Ross</h4>
+                <span class="author-title">Principal, Horizon Architects</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -408,7 +444,7 @@
         </div>
         <div style="display: flex; justify-content: center; gap: var(--space-4);">
           <a href="contact.html" class="btn btn-primary">Book Consultation</a>
-          <a href="services.html#amc-plans" class="btn btn-secondary" style="border-color: var(--bg-primary); color: var(--bg-primary);">View AMC Plans</a>
+          <a href="amc-plans.html" class="btn btn-secondary">View AMC Plans</a>
         </div>
       </div>
     </section>
@@ -421,7 +457,10 @@
     <div class="container footer-grid">
       <!-- Col 1: About & Info -->
       <div>
-        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <div class="footer-logo">
+          <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+          <span class="logo-text">GRID <span>SYSTEMS</span></span>
+        </div>
         <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -437,7 +476,7 @@
           <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
           <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
           <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
-          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+          <li><a href="amc-plans.html" class="footer-link">AMC Contract Plans</a></li>
         </ul>
       </div>
 
@@ -458,7 +497,7 @@
         <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
         <form id="newsletter-form" data-validate class="newsletter-form">
           <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
-          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+          <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe to Newsletter"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>

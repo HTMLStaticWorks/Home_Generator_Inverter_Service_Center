@@ -40,14 +40,30 @@
     
     .contact-coordinate-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: var(--space-4);
+      text-align: left;
     }
     
-    .contact-coordinate-item i {
-      font-size: 1.5rem;
+    html[dir="rtl"] .contact-coordinate-item {
+      text-align: right;
+    }
+
+    .contact-coordinate-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--accent-light);
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-coordinate-icon i {
+      font-size: 1.15rem;
       color: var(--accent);
-      margin-top: var(--space-1);
     }
     
     .contact-map-wrapper {
@@ -132,7 +148,8 @@
   <header class="header">
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -141,7 +158,7 @@
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link active">Contact</a></li>
         </ul>
@@ -166,10 +183,11 @@
   <aside class="mobile-drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
       <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
-        <i class="ph ph-x"></i>
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
     
@@ -178,18 +196,19 @@
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
         <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
-        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
       </ul>
     </nav>
 
     <div class="mobile-drawer-actions">
-      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
-        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
-        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+        <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
+        <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Login</a>
     </div>
   </aside>
 
@@ -217,37 +236,61 @@
           
           <ul class="contact-coordinate-list">
             <li class="contact-coordinate-item">
-              <i class="ph ph-map-pin"></i>
+              <div class="contact-coordinate-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
               <div>
-                <h4>Main Office</h4>
+                <h4 style="margin-bottom: 2px;">Main Office</h4>
                 <p style="margin-bottom: 0;">100 Power Tower, Architectural Core District, NY 10001</p>
               </div>
             </li>
             
             <li class="contact-coordinate-item">
-              <i class="ph ph-phone"></i>
+              <div class="contact-coordinate-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
               <div>
-                <h4>Direct Support Hotline</h4>
+                <h4 style="margin-bottom: 2px;">Direct Support Hotline</h4>
                 <p style="margin-bottom: 0;">+1 (800) 900-GRID</p>
               </div>
             </li>
             
             <li class="contact-coordinate-item">
-              <i class="ph ph-envelope-simple"></i>
+              <div class="contact-coordinate-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
               <div>
-                <h4>Engineering Desk Email</h4>
+                <h4 style="margin-bottom: 2px;">Engineering Desk Email</h4>
                 <p style="margin-bottom: 0;">support@grid-systems.com</p>
               </div>
             </li>
           </ul>
 
-          <!-- Stylized map container -->
-          <div class="contact-map-wrapper">
-            <div class="map-grid-bg"></div>
-            <div class="map-marker-pin">
-              <i class="ph ph-compass" style="font-size: 2rem; color: var(--accent); margin-bottom: 4px;"></i>
-              <h4>GRID Operational Hub</h4>
-              <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0;">Technicians Dispatch Active 24/7</p>
+          <!-- Social Media Channels -->
+          <div class="contact-socials-wrapper" style="margin-bottom: var(--space-6);">
+            <h4 style="font-size: 0.95rem; margin-bottom: var(--space-3); color: var(--text-primary); text-align: left;">Connect With Our Engineering Desk</h4>
+            <div class="footer-socials" style="margin-top: 0;">
+              <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Live Interactive Map Container -->
+          <div class="contact-map-wrapper" style="height: 320px; position: relative; border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); overflow: hidden; margin-top: var(--space-8); box-shadow: var(--shadow-global);">
+            <iframe src="https://maps.google.com/maps?q=100%205th%20Ave%20New%20York&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; filter: contrast(1.05) saturate(1.1); display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="GRID Operational Hub Location Map"></iframe>
+            
+            <!-- Glassmorphism Floating Map Badge -->
+            <div class="map-marker-pin" style="position: absolute; bottom: 15px; left: 15px; right: 15px; background-color: var(--glass-card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); padding: var(--space-3) var(--space-4); display: flex; align-items: center; gap: var(--space-3); z-index: 5; box-shadow: var(--shadow-global);">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background-color: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--accent);">
+                <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 1.1rem;"></i>
+              </div>
+              <div style="text-align: left;">
+                <h4 style="font-size: 0.95rem; margin-bottom: 2px; color: var(--text-primary);">GRID Operational Hub</h4>
+                <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0;">Technicians Dispatch Active 24/7</p>
+              </div>
             </div>
           </div>
         </div>
@@ -301,7 +344,10 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <div class="footer-logo">
+          <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+          <span class="logo-text">GRID <span>SYSTEMS</span></span>
+        </div>
         <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -316,7 +362,7 @@
           <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
           <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
           <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
-          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+          <li><a href="amc-plans.html" class="footer-link">AMC Contract Plans</a></li>
         </ul>
       </div>
 
@@ -335,7 +381,7 @@
         <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
         <form id="newsletter-form" data-validate class="newsletter-form">
           <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
-          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+          <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe to Newsletter"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>

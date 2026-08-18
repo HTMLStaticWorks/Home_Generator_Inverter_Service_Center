@@ -27,8 +27,9 @@
   <!-- Centered Auth Wrapper -->
   <div class="auth-wrapper" style="padding: var(--space-12) 0;">
     <div class="auth-container">
-      <a href="index.html" class="auth-logo" style="text-decoration: none; display: inline-block;">
-        <i class="fa-solid fa-microchip" style="color: var(--accent);"></i> GRID <span>SYSTEMS</span>
+      <a href="index.html" class="auth-logo">
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
       <h2 class="auth-title">Create Engineer Account</h2>
 
@@ -43,15 +44,19 @@
           <input type="email" id="register-email" required class="form-control" placeholder="arthur@grid-systems.com">
         </div>
 
-        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-          <div class="form-group">
-            <label for="register-password" class="form-label">Password</label>
+        <div class="form-group">
+          <label for="register-password" class="form-label">Password</label>
+          <div class="password-input-wrapper">
             <input type="password" id="register-password" name="password" required class="form-control" placeholder="••••••••">
+            <button type="button" class="password-toggle-btn" aria-label="Show Password"><i class="fa-solid fa-eye"></i></button>
           </div>
-          
-          <div class="form-group">
-            <label for="register-confirm" class="form-label">Confirm Password</label>
+        </div>
+        
+        <div class="form-group">
+          <label for="register-confirm" class="form-label">Confirm Password</label>
+          <div class="password-input-wrapper">
             <input type="password" id="register-confirm" name="confirm-password" required class="form-control" placeholder="••••••••">
+            <button type="button" class="password-toggle-btn" aria-label="Show Password"><i class="fa-solid fa-eye"></i></button>
           </div>
         </div>
 

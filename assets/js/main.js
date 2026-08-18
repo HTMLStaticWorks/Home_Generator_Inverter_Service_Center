@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpotlightHover();
   initNumberCounters();
   initTypewriter();
+  initBackToTop();
+  initPasswordToggle();
 });
 
 /* Interactive Card Mouse Trail Spotlight */
@@ -235,12 +237,16 @@ function initSliders() {
     const items = track.querySelectorAll('.slider-item');
     if (items.length === 0) return;
 
+    const prevBtn = parent.querySelector('.slider-arrow-prev');
+    const nextBtn = parent.querySelector('.slider-arrow-next');
+
     // Create indicator dots dynamically
     let itemsPerView = getItemsPerView();
     let totalSlides = Math.ceil(items.length / itemsPerView);
     let activeIndex = 0;
 
     function buildDots() {
+      if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
       for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('button');
@@ -256,8 +262,7 @@ function initSliders() {
 
     function getItemsPerView() {
       if (window.innerWidth <= 768) return 1;
-      if (window.innerWidth <= 1024) return 2;
-      return 3;
+      return 2; // Always display 2 cards per view on desktop for proper 2-card sliding layout
     }
 
     function updateSliderPosition() {
@@ -275,9 +280,25 @@ function initSliders() {
       }
 
       // Update dots states
-      const dots = dotsContainer.querySelectorAll('.slider-dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === activeIndex);
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === activeIndex);
+        });
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        activeIndex = (activeIndex - 1 + totalSlides) % totalSlides;
+        updateSliderPosition();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        activeIndex = (activeIndex + 1) % totalSlides;
+        updateSliderPosition();
       });
     }
 
@@ -531,5 +552,64 @@ function initAnimations() {
 
   animatedElements.forEach(element => {
     observer.observe(element);
+  });
+}
+
+/* ==========================================================================
+   FLOATING BACK TO TOP SYSTEM
+   ========================================================================== */
+function initBackToTop() {
+  let backBtn = document.getElementById('backToTop');
+  if (!backBtn) {
+    backBtn = document.createElement('button');
+    backBtn.id = 'backToTop';
+    backBtn.className = 'back-to-top-btn';
+    backBtn.setAttribute('aria-label', 'Back to top');
+    backBtn.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
+    document.body.appendChild(backBtn);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backBtn.classList.add('visible');
+    } else {
+      backBtn.classList.remove('visible');
+    }
+  });
+
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/* ==========================================================================
+   PASSWORD VISIBILITY EYE TOGGLE
+   ========================================================================== */
+function initPasswordToggle() {
+  const toggleBtns = document.querySelectorAll('.password-toggle-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const container = btn.closest('.password-input-wrapper');
+      if (!container) return;
+      const input = container.querySelector('input');
+      const icon = btn.querySelector('i');
+      if (!input || !icon) return;
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+        btn.setAttribute('aria-label', 'Hide Password');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+        btn.setAttribute('aria-label', 'Show Password');
+      }
+    });
   });
 }

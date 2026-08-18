@@ -123,7 +123,8 @@
   <header class="header">
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -132,7 +133,7 @@
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
           <li><a href="blog.html" class="nav-link active">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
@@ -157,10 +158,11 @@
   <aside class="mobile-drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="logo">
-        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+        <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+        <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
       <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
-        <i class="ph ph-x"></i>
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
     
@@ -169,18 +171,19 @@
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
         <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
       </ul>
     </nav>
 
     <div class="mobile-drawer-actions">
-      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
-        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
-        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+        <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
+        <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Login</a>
     </div>
   </aside>
 
@@ -188,35 +191,41 @@
     <!-- ==========================================================================
          PAGE HEADER
          ========================================================================== */ -->
-    <section class="page-header" style="position: relative; overflow: hidden;">
+    <section class="page-header" style="position: relative; overflow: hidden; padding-top: 140px; padding-bottom: var(--space-12); background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); text-align: center;">
       <div class="ambient-orb" style="top: -100px; left: 50%; transform: translateX(-50%);"></div>
-      <div class="container" style="margin-top: var(--space-12); position: relative; z-index: 2;">
+      <div class="container" style="position: relative; z-index: 2;">
         <span class="hero-subtitle">Engineering Desk</span>
-        <h1 class="hero-title">TECHNICAL <span class="text-gold-gradient">JOURNAL</span></h1>
-        
-        <!-- Search Bar -->
-        <div class="blog-search-bar">
-          <input type="text" placeholder="Search articles..." class="newsletter-input" aria-label="Search Articles">
-          <button class="btn btn-primary" style="padding: 0 var(--space-6);"><i class="ph ph-magnifying-glass"></i></button>
-        </div>
-
-        <!-- Filter Tags -->
-        <div class="blog-filters">
-          <span class="filter-tag active">All Articles</span>
-          <span class="filter-tag">Acoustic Shielding</span>
-          <span class="filter-tag">BMS & Lithium</span>
-          <span class="filter-tag">AMC Best Practices</span>
-          <span class="filter-tag">Solar Sync</span>
-        </div>
+        <h1 class="hero-title" style="margin-bottom: var(--space-3);">TECHNICAL <span class="text-gold-gradient">JOURNAL</span></h1>
+        <p style="font-size: var(--size-lead); color: var(--text-secondary); max-width: 650px; margin: 0 auto;">
+          Insights, acoustic guides, and battery diagnostic reports authored by our master power engineers.
+        </p>
       </div>
     </section>
 
     <!-- ==========================================================================
-         BLOG POSTS GRID (Step 9.5 Blog Grid)
+         BLOG POSTS GRID & FILTERS (Search & Tabs placed below Hero Section)
          ========================================================================== */ -->
     <section class="about-section">
       <div class="container">
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <!-- Search Bar & Category Filter Tabs Below Hero Section -->
+        <div class="blog-controls-wrapper" style="margin-bottom: var(--space-12); display: flex; flex-direction: column; align-items: center; gap: var(--space-6);">
+          <!-- Search Bar -->
+          <div class="blog-search-bar" style="max-width: 550px; width: 100%; display: flex; gap: var(--space-2);">
+            <input type="text" placeholder="Search articles..." class="newsletter-input" aria-label="Search Articles" style="flex-grow: 1;">
+            <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Search Submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="blog-filters" style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3);">
+            <button class="filter-tag active">All Articles</button>
+            <button class="filter-tag">Acoustic Shielding</button>
+            <button class="filter-tag">BMS & Lithium</button>
+            <button class="filter-tag">AMC Best Practices</button>
+            <button class="filter-tag">Solar Sync</button>
+          </div>
+        </div>
+
+        <div class="card-grid">
           <!-- Article 1 -->
           <article class="blog-card">
             <div class="blog-img-wrapper">
@@ -279,6 +288,59 @@
         </div>
       </div>
     </section>
+
+    <!-- ==========================================================================
+         ENGINEERING WHITE PAPERS & GUIDES SECTION (New Blog Section)
+         ========================================================================== */ -->
+    <section class="about-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <h2>FEATURED WHITE PAPERS & SCHEMATICS</h2>
+          <p>Download architectural CAD blueprints, decibel mitigation guidelines, and battery cell health white papers.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- White Paper 1 -->
+          <div class="premium-card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+                <span class="blog-category" style="background-color: var(--accent-light); color: var(--accent); padding: var(--space-1) var(--space-3); border-radius: var(--radius-global); font-size: 0.75rem; text-transform: uppercase;">Acoustic Engineering</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-file-pdf" style="color: #e74c3c; margin-right: 4px;"></i> 4.2 MB</span>
+              </div>
+              <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: var(--space-3); text-align: left;">Residential Decibel Mitigation Guidelines 2026</h3>
+              <p class="card-desc" style="font-size: 0.9rem; margin-bottom: var(--space-6); text-align: left;">Comprehensive architectural guide for encasing 50kVA+ generators in stone facades while maintaining air intake under 52 dBA.</p>
+            </div>
+            <a href="contact.html" class="btn btn-secondary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download PDF Schematic</a>
+          </div>
+
+          <!-- White Paper 2 -->
+          <div class="premium-card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-color: var(--accent);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+                <span class="blog-category" style="background-color: var(--accent-light); color: var(--accent); padding: var(--space-1) var(--space-3); border-radius: var(--radius-global); font-size: 0.75rem; text-transform: uppercase;">Battery Telemetry</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-file-pdf" style="color: #e74c3c; margin-right: 4px;"></i> 6.8 MB</span>
+              </div>
+              <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: var(--space-3); text-align: left;">Lithium BMS Cell Rejuvenation White Paper</h3>
+              <p class="card-desc" style="font-size: 0.9rem; margin-bottom: var(--space-6); text-align: left;">Mathematical formulas and thermal telemetry thresholds used to extend lithium storage pack lifespans by up to 40%.</p>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download White Paper</a>
+          </div>
+
+          <!-- White Paper 3 -->
+          <div class="premium-card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+                <span class="blog-category" style="background-color: var(--accent-light); color: var(--accent); padding: var(--space-1) var(--space-3); border-radius: var(--radius-global); font-size: 0.75rem; text-transform: uppercase;">Microgrid Design</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-file-pdf" style="color: #e74c3c; margin-right: 4px;"></i> 8.1 MB</span>
+              </div>
+              <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: var(--space-3); text-align: left;">Hybrid Inverter-Generator Synchronization Blueprint</h3>
+              <p class="card-desc" style="font-size: 0.9rem; margin-bottom: var(--space-6); text-align: left;">Wiring schematics and ATS relay switch logic for instantaneous zero-millisecond transition across estate power blocks.</p>
+            </div>
+            <a href="contact.html" class="btn btn-secondary" style="width: 100%; justify-content: center;"><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download Blueprint</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ==========================================================================
@@ -287,7 +349,10 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <div class="footer-logo">
+          <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
+          <span class="logo-text">GRID <span>SYSTEMS</span></span>
+        </div>
         <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -302,7 +367,7 @@
           <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
           <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
           <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
-          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+          <li><a href="amc-plans.html" class="footer-link">AMC Contract Plans</a></li>
         </ul>
       </div>
 
@@ -321,7 +386,7 @@
         <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
         <form id="newsletter-form" data-validate class="newsletter-form">
           <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
-          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+          <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe to Newsletter"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>

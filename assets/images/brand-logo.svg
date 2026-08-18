@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" class="grid-brand-logo-svg">
+  <defs>
+    <!-- Gold Metallic Gradient -->
+    <linearGradient id="brandGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB" />
+      <stop offset="30%" stop-color="#D4AF37" />
+      <stop offset="70%" stop-color="#B48C57" />
+      <stop offset="100%" stop-color="#8A6530" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Logo Mark Icon Container -->
+  <g transform="translate(4, 4)">
+    <!-- Outer Hex Shield / Grid Frame -->
+    <rect x="2" y="2" width="52" height="52" rx="14" fill="#121418" stroke="url(#brandGoldGrad)" stroke-width="2.5" />
+    <rect x="7" y="7" width="42" height="42" rx="10" fill="none" stroke="url(#brandGoldGrad)" stroke-width="1" opacity="0.4" stroke-dasharray="3,3" />
+
+    <!-- Corner Grid Tech Nodes -->
+    <circle cx="14" cy="14" r="2" fill="url(#brandGoldGrad)"/>
+    <circle cx="42" cy="14" r="2" fill="url(#brandGoldGrad)"/>
+    <circle cx="14" cy="42" r="2" fill="url(#brandGoldGrad)"/>
+    <circle cx="42" cy="42" r="2" fill="url(#brandGoldGrad)"/>
+
+    <!-- Circuit Connection Lines -->
+    <path d="M14 14 L20 20 M42 14 L36 20 M14 42 L20 36 M42 42 L36 36" stroke="url(#brandGoldGrad)" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Central Dynamic Lightning Bolt / Energy Core -->
+    <path d="M33 13 L19 32 H30 L25 45 L41 26 H30 L33 13 Z" fill="url(#brandGoldGrad)" filter="url(#logoGlow)"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(72, 38)">
+    <!-- GRID -->
+    <text x="0" y="0" font-family="'Outfit', 'Inter', 'Montserrat', sans-serif" font-size="26" font-weight="900" letter-spacing="1.5" fill="currentColor" class="logo-text-primary">GRID</text>
+    
+    <!-- SYSTEMS -->
+    <text x="76" y="0" font-family="'Outfit', 'Inter', 'Montserrat', sans-serif" font-size="26" font-weight="900" letter-spacing="1.5" fill="url(#brandGoldGrad)" class="logo-text-accent">SYSTEMS</text>
+
+    <!-- Subtitle Tagline -->
+    <text x="1.5" y="16" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" letter-spacing="3" fill="url(#brandGoldGrad)" opacity="0.9" text-transform="uppercase">GENERATORS &amp; INVERTERS</text>
+  </g>
+</svg>
