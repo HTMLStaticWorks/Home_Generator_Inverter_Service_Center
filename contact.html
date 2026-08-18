@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID SYSTEMS — Contact Engineering Desk & Service Booking</title>
+  <meta name="description" content="Reach our technical support, book an on-site generator or inverter diagnostic check, or ask about our AMC plans.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Page Specific Styles for Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      margin-top: var(--space-12);
+    }
+    
+    .contact-info-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .contact-coordinate-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+    
+    .contact-coordinate-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+    
+    .contact-coordinate-item i {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-top: var(--space-1);
+    }
+    
+    .contact-map-wrapper {
+      height: 300px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      overflow: hidden;
+      margin-top: var(--space-8);
+      position: relative;
+      background-color: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .map-grid-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image: 
+        linear-gradient(var(--text-primary) 1px, transparent 1px),
+        linear-gradient(90deg, var(--text-primary) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    
+    .map-marker-pin {
+      position: relative;
+      z-index: 2;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      padding: var(--space-3) var(--space-6);
+      box-shadow: var(--shadow-global);
+      text-align: center;
+    }
+    
+    .contact-form-box {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-global);
+    }
+
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+      }
+    }
+
+    /* Small Mobile Specific Rules (360px - Step 9.6) */
+    @media (max-width: 360px) {
+      body {
+        text-align: center;
+      }
+      .contact-grid {
+        padding: 0 var(--space-2);
+      }
+      .contact-form-box {
+        padding: var(--space-4) var(--space-3);
+      }
+      .contact-coordinate-item {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-1);
+      }
+      .contact-coordinate-item i {
+        margin-top: 0;
+      }
+      .contact-map-wrapper {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Step 4 & 5)
+       ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button class="hamburger" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== */ -->
+    <section class="page-header">
+      <div class="container" style="margin-top: var(--space-12);">
+        <span class="hero-subtitle">Engineering Desk</span>
+        <h1 class="hero-title" style="margin-bottom: 0;">REQUEST SERVICE & CONTACT</h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SPLIT GRID (Step 9.6 Contact)
+         ========================================================================== */ -->
+    <section class="about-section">
+      <div class="container contact-grid">
+        <!-- Coordinates & Map Column -->
+        <div class="contact-info-block">
+          <span class="about-tag">Direct Lines</span>
+          <h3 style="margin-bottom: var(--space-6);">GRID Headquarters</h3>
+          <p>Contact our service desk for immediate technical diagnostics, battery checks, or custom installation blueprints.</p>
+          
+          <ul class="contact-coordinate-list">
+            <li class="contact-coordinate-item">
+              <i class="ph ph-map-pin"></i>
+              <div>
+                <h4>Main Office</h4>
+                <p style="margin-bottom: 0;">100 Power Tower, Architectural Core District, NY 10001</p>
+              </div>
+            </li>
+            
+            <li class="contact-coordinate-item">
+              <i class="ph ph-phone"></i>
+              <div>
+                <h4>Direct Support Hotline</h4>
+                <p style="margin-bottom: 0;">+1 (800) 900-GRID</p>
+              </div>
+            </li>
+            
+            <li class="contact-coordinate-item">
+              <i class="ph ph-envelope-simple"></i>
+              <div>
+                <h4>Engineering Desk Email</h4>
+                <p style="margin-bottom: 0;">support@grid-systems.com</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Stylized map container -->
+          <div class="contact-map-wrapper">
+            <div class="map-grid-bg"></div>
+            <div class="map-marker-pin">
+              <i class="ph ph-compass" style="font-size: 2rem; color: var(--accent); margin-bottom: 4px;"></i>
+              <h4>GRID Operational Hub</h4>
+              <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0;">Technicians Dispatch Active 24/7</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Validation Form Column -->
+        <div class="contact-form-box">
+          <h3 style="margin-bottom: var(--space-6); text-align: center;">Book Diagnostics or AMC</h3>
+          <form id="contact-form" data-validate>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Full Name</label>
+              <input type="text" id="contact-name" required class="form-control" placeholder="Arthur Cole">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" required class="form-control" placeholder="arthur@domain.com">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-service" class="form-label">Request Type</label>
+              <select id="contact-service" required class="form-control">
+                <option value="">Select Option...</option>
+                <option value="generator">Residential Generator Install</option>
+                <option value="inverter">Smart Inverter Setup</option>
+                <option value="battery">Battery Diagnostics / Replacement</option>
+                <option value="amc">AMC Plan Registration</option>
+                <option value="general">General Engineering Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">System / Site Details</label>
+              <textarea id="contact-message" required class="form-control" rows="5" placeholder="Specify home layout space limits or generator size..."></textarea>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="contact-terms" name="terms" required>
+              <label for="contact-terms">I accept the Terms and Conditions and request dispatcher reply.</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Dispatch Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
+          <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
+          <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
+          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Philosophy</a></li>
+          <li><a href="about.html#milestones" class="footer-link">Engineering Milestones</a></li>
+          <li><a href="blog.html" class="footer-link">Technical Articles</a></li>
+          <li><a href="contact.html" class="footer-link active">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
+        <form id="newsletter-form" data-validate class="newsletter-form">
+          <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
+          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GRID SYSTEMS. Home Generator & Inverter Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* ==========================================================================
+   RTL SYSTEM OVERRIDES (Step 5)
+   ========================================================================== */
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flip Heading & Subtext alignments */
+html[dir="rtl"] .section-header {
+  text-align: center; /* Centering rules remain centered, but child text directions should align */
+}
+
+/* Navbar specific overrides */
+html[dir="rtl"] .logo {
+  flex-direction: row-reverse;
+}
+
+/* Mobile Drawer overrides for RTL */
+html[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: -100%; /* Drawer slides from left in RTL */
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15);
+  transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html[dir="rtl"] .mobile-drawer.open {
+  right: auto;
+  left: 0;
+}
+
+/* Flip slider layouts */
+html[dir="rtl"] .slider-container {
+  flex-direction: row-reverse;
+}
+
+/* Card layout direction flips */
+html[dir="rtl"] .premium-card::before {
+  left: auto;
+  right: 0;
+  transform-origin: left;
+}
+
+html[dir="rtl"] .premium-card:hover::before {
+  transform-origin: right;
+}
+
+/* Button indicator reversals */
+html[dir="rtl"] .btn-text::after {
+  content: '←';
+}
+
+html[dir="rtl"] .btn-text:hover::after {
+  transform: translateX(-6px);
+}
+
+/* Footer Link transitions */
+html[dir="rtl"] .footer-link:hover {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+/* Form layouts and labels */
+html[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+html[dir="rtl"] .checkbox-group {
+  text-align: right;
+}
+
+/* Icons and specific detail structures */
+html[dir="rtl"] .testimonial-author {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .showcase-specs {
+  flex-direction: row;
+}
+
+/* Flip grid animations and positions if any */
+html[dir="rtl"] .footer-info-item i {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .section-header,
+  html[dir="rtl"] .hero-content,
+  html[dir="rtl"] .hero-split-content,
+  html[dir="rtl"] .page-header,
+  html[dir="rtl"] .about-details,
+  html[dir="rtl"] .services-alt-content,
+  html[dir="rtl"] .article-header,
+  html[dir="rtl"] .footer-grid > div,
+  html[dir="rtl"] .form-group,
+  html[dir="rtl"] .checkbox-group {
+    text-align: center !important;
+  }
+}

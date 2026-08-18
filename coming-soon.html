@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — Next Gen Grid Systems</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .soon-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background-color: var(--bg-primary);
+      padding: var(--space-8);
+    }
+    
+    .soon-title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: var(--weight-h1);
+      margin-bottom: var(--space-4);
+      z-index: 2;
+      position: relative;
+      max-width: 800px;
+    }
+    
+    .soon-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--size-lead);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: var(--space-6);
+      z-index: 2;
+      position: relative;
+    }
+    
+    .countdown-grid {
+      display: flex;
+      gap: var(--space-4);
+      margin: var(--space-12) 0;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .countdown-box {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      width: 100px;
+      padding: var(--space-6) var(--space-4);
+      box-shadow: var(--shadow-global);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .countdown-num {
+      font-family: var(--font-heading);
+      font-size: var(--size-h2);
+      font-weight: var(--weight-h2);
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    
+    .countdown-label {
+      font-size: var(--size-caption);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .soon-form-box {
+      width: 100%;
+      max-width: 500px;
+      z-index: 2;
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .countdown-grid {
+        gap: var(--space-2);
+      }
+      .countdown-box {
+        width: 70px;
+        padding: var(--space-4) var(--space-2);
+      }
+      .countdown-num {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body style="overflow: hidden;">
+
+  <!-- Coming Soon Wrapper -->
+  <div class="soon-container">
+    <div class="architectural-grid"></div>
+    
+    <span class="soon-subtitle reveal-text">GRID Systems Launch</span>
+    <h1 class="soon-title reveal-text reveal-text-delay-1">UNLEASHING RESILIENT NEXT-GEN BACKUP ENERGY</h1>
+    
+    <!-- Countdown Timer (Step 9.11) -->
+    <div class="countdown-grid reveal-text reveal-text-delay-2">
+      <!-- Days -->
+      <div class="countdown-box">
+        <span class="countdown-num" id="days">45</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <!-- Hours -->
+      <div class="countdown-box">
+        <span class="countdown-num" id="hours">12</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <!-- Minutes -->
+      <div class="countdown-box">
+        <span class="countdown-num" id="minutes">30</span>
+        <span class="countdown-label">Min</span>
+      </div>
+      <!-- Seconds -->
+      <div class="countdown-box">
+        <span class="countdown-num" id="seconds">55</span>
+        <span class="countdown-label">Sec</span>
+      </div>
+    </div>
+    
+    <!-- Email Capture Form (Step 9.11) -->
+    <div class="soon-form-box reveal-text reveal-text-delay-3">
+      <p style="margin-bottom: var(--space-6); color: var(--text-secondary);">Subscribe to be notified of our official launch and receive early technical consultation invites.</p>
+      
+      <form id="coming-soon-form" data-validate class="newsletter-form" style="max-width: 100%;">
+        <input type="email" id="soon-email" required class="newsletter-input" placeholder="Enter your email address" aria-label="Coming Soon Newsletter Input">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- JavaScript Countdown Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set target countdown date (45 days from today)
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 45);
+      targetDate.setHours(targetDate.getHours() + 12);
+      
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate.getTime() - now;
+        
+        if (distance < 0) {
+          clearInterval(interval);
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+        document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+        document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+      }
+      
+      const interval = setInterval(updateCountdown, 1000);
+      updateCountdown(); // Run immediately
+    });
+  </script>
+</body>
+</html>

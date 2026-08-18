@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Outage Detected — GRID SYSTEMS</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background-color: var(--bg-primary);
+      padding: var(--space-8);
+    }
+    
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: clamp(6rem, 15vw, 12rem);
+      line-height: 1;
+      font-weight: var(--weight-h1);
+      color: var(--accent);
+      letter-spacing: -0.05em;
+      position: relative;
+      margin-bottom: var(--space-4);
+      z-index: 2;
+    }
+    
+    .error-title {
+      font-size: var(--size-h2);
+      font-weight: var(--weight-h2);
+      margin-bottom: var(--space-4);
+      z-index: 2;
+      position: relative;
+      text-transform: uppercase;
+    }
+    
+    .error-message {
+      max-width: 500px;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-8);
+      z-index: 2;
+      position: relative;
+    }
+  </style>
+</head>
+<body style="overflow: hidden;">
+
+  <!-- Error Wrapper -->
+  <div class="error-container">
+    <div class="architectural-grid"></div>
+    
+    <div class="error-code reveal-text">404</div>
+    <h2 class="error-title reveal-text reveal-text-delay-1">Outage Detected</h2>
+    <p class="error-message reveal-text reveal-text-delay-2">
+      The coordinates you requested are currently disconnected from our grid. The page may have been decommissioned or relocated.
+    </p>
+    
+    <div class="reveal-text reveal-text-delay-3" style="z-index: 2; position: relative;">
+      <a href="index.html" class="btn btn-primary"><i class="ph ph-plugs-connected"></i> Reconnect to Home</a>
+    </div>
+  </div>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

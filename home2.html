@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID SYSTEMS — Premium Residential & Office Power Systems</title>
+  <meta name="description" content="Explore luxury residential silent generator plants and industrial inverter systems. Complete AMC contract coverage.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Page Specific Unique Styles for Home 2 */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      min-height: 100vh;
+      background-color: var(--bg-primary);
+      padding-top: 80px;
+    }
+    
+    .hero-split-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-12) var(--space-8);
+      z-index: 2;
+    }
+    
+    .hero-split-image {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+    
+    .hero-split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Interactive Tabs Section */
+    .showcase-tabs {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-12);
+    }
+    
+    .tab-btn {
+      padding: var(--space-3) var(--space-6);
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-weight: var(--weight-btn);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    
+    .tab-btn.active, .tab-btn:hover {
+      background-color: var(--accent);
+      color: var(--bg-secondary);
+      border-color: var(--accent);
+    }
+    
+    .tab-pane {
+      display: none;
+    }
+    
+    .tab-pane.active {
+      display: grid;
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+    
+    /* Pricing Table Matrix */
+    .amc-table-container {
+      overflow-x: auto;
+      margin-top: var(--space-12);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      box-shadow: var(--shadow-global);
+    }
+    
+    .amc-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      background-color: var(--bg-secondary);
+    }
+    
+    html[dir="rtl"] .amc-table {
+      text-align: right;
+    }
+    
+    .amc-table th, .amc-table td {
+      padding: var(--space-4) var(--space-6);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .amc-table th {
+      background-color: var(--bg-tertiary);
+      font-family: var(--font-heading);
+      font-weight: var(--weight-h4);
+      color: var(--text-primary);
+    }
+    
+    .amc-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .amc-highlight {
+      background-color: var(--accent-light);
+      font-weight: var(--weight-bold-inline);
+      color: var(--accent);
+    }
+    
+    /* Alternating Services Layout */
+    .services-alt-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+      margin-bottom: var(--space-16);
+    }
+    
+    .services-alt-row:nth-child(even) {
+      direction: rtl;
+    }
+    
+    html[dir="rtl"] .services-alt-row:nth-child(even) {
+      direction: ltr; /* Reset for proper logical RTL nesting */
+    }
+    
+    .services-alt-row:nth-child(even) .services-alt-content {
+      direction: ltr; /* Reset nested text */
+    }
+    
+    html[dir="rtl"] .services-alt-row:nth-child(even) .services-alt-content {
+      direction: rtl;
+    }
+    
+    .services-alt-image {
+      height: 400px;
+      overflow: hidden;
+      border-radius: var(--radius-global);
+      border: 1px solid var(--border-color);
+    }
+    
+    .services-alt-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    
+    .services-alt-row:hover .services-alt-image img {
+      transform: scale(1.04);
+    }
+    
+    /* Booking Form Layout */
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      box-shadow: var(--shadow-global);
+      padding: var(--space-12);
+      margin-top: var(--space-12);
+    }
+    
+    /* Step Timeline Styling */
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+      position: relative;
+    }
+    
+    .timeline-step-item {
+      text-align: center;
+      position: relative;
+    }
+    
+    .timeline-step-num {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+      color: var(--accent);
+      border-radius: 50%;
+      font-weight: var(--weight-h3);
+      margin: 0 auto var(--space-4);
+      z-index: 2;
+      position: relative;
+    }
+    
+    .timeline-step-item::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background-color: var(--border-color);
+      z-index: 1;
+    }
+    
+    .timeline-step-item:last-child::after {
+      display: none;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .hero-split-image {
+        height: 400px;
+      }
+      .services-alt-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      .services-alt-row:nth-child(even) {
+        direction: ltr;
+      }
+      .services-alt-image {
+        height: 300px;
+      }
+      .booking-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+      .timeline-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+      .timeline-step-item::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Step 4 & 5)
+       ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link active">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button class="hamburger" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link active">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (Split-screen & Parallax Feel)
+         ========================================================================== */ -->
+    <section class="hero-split" style="position: relative; overflow: hidden;">
+      <div class="ambient-orb" style="top: 50px; left: -100px;"></div>
+      <div class="hero-split-content container">
+        <span class="hero-subtitle reveal-text">GRID ARCHITECTS</span>
+        <h1 class="hero-title reveal-text reveal-text-delay-1" style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: var(--space-4);">UNINTERRUPTED INFRASTRUCTURE FOR <span class="text-gold-gradient" data-typewriter='["LUXURY ESTATES", "CORPORATE HUBS", "OFF-GRID RESIDENCES"]'>LUXURY ESTATES</span></h1>
+        <p class="hero-desc reveal-text reveal-text-delay-2" style="margin-left: 0; margin-right: auto; max-width: 100%; text-align: left;">
+          We construct industrial-grade electrical frameworks that fit the design of luxury residences. Zero noise. Zero aesthetics compromise. Zero power loss.
+        </p>
+        <div class="hero-actions reveal-text reveal-text-delay-3" style="justify-content: flex-start;">
+          <a href="#booking" class="btn btn-primary">Book Technical Audit</a>
+          <a href="#showcase" class="btn btn-secondary">Explore Systems</a>
+        </div>
+      </div>
+      <div class="hero-split-image reveal-text reveal-text-delay-2">
+        <img src="assets/images/Custom Built Generators_ Tailored Power for Every___.jpg" alt="Generator System">
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE SHOWCASE SECTION (Reorganized & Filterable - Step 9.2)
+         ========================================================================== */ -->
+    <section id="showcase" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>BESPOKE ELECTRICAL ARCHITECTURES</h2>
+          <p>Filter between residential and commercial architectures to view typical layouts.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="showcase-tabs">
+          <button class="tab-btn active" data-tab="residential">Residential Backup</button>
+          <button class="tab-btn" data-tab="corporate">Corporate Backup</button>
+        </div>
+
+        <!-- Tab 1 Pane -->
+        <div class="tab-pane active" id="residential">
+          <div class="card-grid">
+            <div class="premium-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Custom Built Generators_ Tailored Power for Every___.jpg" alt="Villa Silent Grid">
+              </div>
+              <div class="card-icon"><i class="fa-solid fa-house-signal"></i></div>
+              <h3 class="card-title">Villa Silent Grid</h3>
+              <p class="card-desc">20kVA-50kVA silent-enclosure diesel generator synced with local home automation panel, operating under 50 dBA.</p>
+              <a href="services.html#generators" class="btn-text">Specs sheet</a>
+            </div>
+            <div class="premium-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/EcoFlow just dropped its new DELTA 3 Max Plus___.jpg" alt="Lithium Clean Vault">
+              </div>
+              <div class="card-icon"><i class="fa-solid fa-battery-full"></i></div>
+              <h3 class="card-title">Lithium Clean Vault</h3>
+              <p class="card-desc">15kW smart inverter paired with wall-integrated LiFePO4 battery storage stacks for absolute emissionless security.</p>
+              <a href="services.html#inverters" class="btn-text">Specs sheet</a>
+            </div>
+            <div class="premium-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/This Solar System Can Power Your Entire Home.jpg" alt="Eco-Hybrid Microgrid">
+              </div>
+              <div class="card-icon"><i class="fa-solid fa-solar-panel"></i></div>
+              <h3 class="card-title">Eco-Hybrid Microgrid</h3>
+              <p class="card-desc">Dynamic sync modules combining rooftop solar, battery cell banks, and minimal diesel support for off-grid estates.</p>
+              <a href="services.html#hybrid" class="btn-text">Specs sheet</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2 Pane -->
+        <div class="tab-pane" id="corporate">
+          <div class="card-grid">
+            <div class="premium-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Custom Built Generators_ Tailored Power for Every___.jpg" alt="Office Complex APEX">
+              </div>
+              <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+              <h3 class="card-title">Office Complex APEX</h3>
+              <p class="card-desc">High-capacity 100kVA-250kVA twin sync turbines configured to support server arrays, cooling, and lifts.</p>
+              <a href="services.html#generators" class="btn-text">Specs sheet</a>
+            </div>
+            <div class="premium-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/Reliable Automotive Battery Solutions by Dial A Battery.jpg" alt="Continuous UPS Inverters">
+              </div>
+              <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+              <h3 class="card-title">Continuous UPS Inverters</h3>
+              <p class="card-desc">Zero-transition office inverters maintaining continuous sine-wave power supply to security gates and server racks.</p>
+              <a href="services.html#inverters" class="btn-text">Specs sheet</a>
+            </div>
+            <div class="premium-card">
+              <div class="card-img-wrapper">
+                <img src="assets/images/The company gives the Best Computer AMC Service Provider in Mumbai_ When the people need a state-of-the-art technique for the repairing and maintenance, the company is the first one to be called upon_.jpg" alt="Network-Wide AMC">
+              </div>
+              <div class="card-icon"><i class="fa-solid fa-shield"></i></div>
+              <h3 class="card-title">Network-Wide AMC</h3>
+              <p class="card-desc">Structured enterprise AMC plans featuring 1-hour service SLA, monthly load test audits, and thermal imagery scans.</p>
+              <a href="services.html#amc-plans" class="btn-text">Specs sheet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES SECTION (Alt Visual Style: Alternating Rows - Step 9.2)
+         ========================================================================== */ -->
+    <section class="about-section" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>TECHNICAL EXECUTION</h2>
+          <p>How we integrate, deploy, and maintain premium emergency backup networks.</p>
+        </div>
+
+        <!-- Alternate Service 1 -->
+        <div class="services-alt-row">
+          <div class="services-alt-image">
+            <img src="assets/images/Acoustic Panel Gaming Room Setup.jpg" alt="Generator Installation Design">
+          </div>
+          <div class="services-alt-content">
+            <span class="about-tag">Step 01</span>
+            <h3>Bespoke Aesthetic Rigging</h3>
+            <p>We work directly with builders and interior architects. Generators and battery modules are fitted in design-matching custom subterranean vaults, structural side alcoves, or quiet acoustic-shielded engine rooms.</p>
+            <a href="services.html#generators" class="btn btn-secondary">Installation Gallery</a>
+          </div>
+        </div>
+
+        <!-- Alternate Service 2 -->
+        <div class="services-alt-row">
+          <div class="services-alt-image">
+            <img src="assets/images/Reliable Automotive Battery Solutions by Dial A Battery.jpg" alt="Battery Diagnostic Check">
+          </div>
+          <div class="services-alt-content">
+            <span class="about-tag">Step 02</span>
+            <h3>Dynamic Battery Overhaul</h3>
+            <p>Our battery maintenance crew analyzes internal cells, performs capacity discharge cycles, recalibrates battery management systems (BMS), and installs high-density certified blocks to ensure perfect system health.</p>
+            <a href="services.html#battery-service" class="btn btn-secondary">Diagnostic Process</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AMC PLANS MATRIX TABLE (Step 9.2 & 9.3 comparison matrix)
+         ========================================================================== */ -->
+    <section class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>ANNUAL MAINTENANCE CONTRACT (AMC) PLANS</h2>
+          <p>Protect your emergency energy network with certified engineering audits and telemetry tracking.</p>
+        </div>
+
+        <div class="amc-table-container">
+          <table class="amc-table">
+            <thead>
+              <tr>
+                <th>Features Included</th>
+                <th>Standard AMC</th>
+                <th class="amc-highlight">Executive AMC</th>
+                <th>Industrial Complex AMC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Annual Maintenance Audits</td>
+                <td>2 / Year</td>
+                <td class="amc-highlight">4 / Year</td>
+                <td>12 / Year (Monthly)</td>
+              </tr>
+              <tr>
+                <td>Emergency Dispatch SLA</td>
+                <td>Under 12 Hours</td>
+                <td class="amc-highlight">Under 4 Hours</td>
+                <td>Under 1 Hour Guarantee</td>
+              </tr>
+              <tr>
+                <td>Telemetry Monitoring</td>
+                <td>No</td>
+                <td class="amc-highlight">Yes (Real-time App)</td>
+                <td>Yes (Dedicated Console)</td>
+              </tr>
+              <tr>
+                <td>Battery Cell Balancing</td>
+                <td>No</td>
+                <td class="amc-highlight">Annual Check</td>
+                <td>Bi-Annual Calibration</td>
+              </tr>
+              <tr>
+                <td>Acoustic Decibel Review</td>
+                <td>Annual Check</td>
+                <td class="amc-highlight">Bi-Annual Review</td>
+                <td>Quarterly Review</td>
+              </tr>
+              <tr>
+                <td>Priority Battery Replacements</td>
+                <td>No</td>
+                <td class="amc-highlight">15% Discount</td>
+                <td>Included (Full Warranty)</td>
+              </tr>
+              <tr style="font-weight: var(--weight-bold-inline);">
+                <td>Annual Premium Cost</td>
+                <td>$450 / Year</td>
+                <td class="amc-highlight">$1,200 / Year</td>
+                <td>Custom Quote Only</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROCESS TIMELINE (Step 9.2 Milestone Layout)
+         ========================================================================== */ -->
+    <section class="about-section" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>OUR SYSTEM PIPELINE</h2>
+          <p>Four phases of technical rigor to secure complete energy self-sufficiency.</p>
+        </div>
+
+        <div class="timeline-steps">
+          <div class="timeline-step-item">
+            <div class="timeline-step-num radar-pin">01</div>
+            <h4 style="margin-top: var(--space-4);">Power Audit</h4>
+            <p style="font-size: var(--size-caption);">We log estate consumption spikes to size the generator and inverter arrays correctly.</p>
+          </div>
+          <div class="timeline-step-item">
+            <div class="timeline-step-num radar-pin">02</div>
+            <h4 style="margin-top: var(--space-4);">Design Plan</h4>
+            <p style="font-size: var(--size-caption);">We design structural acoustic baffles, thermal extraction ducts, and grid synchronization schemas.</p>
+          </div>
+          <div class="timeline-step-item">
+            <div class="timeline-step-num radar-pin">03</div>
+            <h4 style="margin-top: var(--space-4);">Installation</h4>
+            <p style="font-size: var(--size-caption);">Heavy crane placement, vibration-isolation pads anchor, fuel storage layout, and BMS integration.</p>
+          </div>
+          <div class="timeline-step-item">
+            <div class="timeline-step-num radar-pin">04</div>
+            <h4 style="margin-top: var(--space-4);">AMC Telemetry</h4>
+            <p style="font-size: var(--size-caption);">Active cloud synchronization. We track cell voltages, coolant temperatures, and schedule oil overhauls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE BOOKING FORM (Step 9.2 & Step 12 validation rules)
+         ========================================================================== */ -->
+    <section id="booking" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>BOOK SYSTEM AUDIT OR AMC PLANS</h2>
+          <p>Book an emergency survey, backup system design review, or battery diagnostics visit.</p>
+        </div>
+
+        <div class="booking-grid">
+          <!-- Information Details Column -->
+          <div style="padding: var(--space-4); display: flex; flex-direction: column; justify-content: center;">
+            <h3 style="margin-bottom: var(--space-6);">Secure Electrical Autonomy</h3>
+            <p>Our engineers perform site diagnostics using advanced thermal mapping and power harmonic analyzers. We check:</p>
+            <ul style="list-style: none; margin-bottom: var(--space-8); display: flex; flex-direction: column; gap: var(--space-3);">
+              <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-check" style="color: var(--accent);"></i> Base noise level & acoustic positioning options</li>
+              <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-check" style="color: var(--accent);"></i> Peak current transients & dynamic motor start demands</li>
+              <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-check" style="color: var(--accent);"></i> Battery bank equalization and capacity state check</li>
+              <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-check" style="color: var(--accent);"></i> Full compliance with local residential zoning decibel limits</li>
+            </ul>
+            <div class="footer-info-item">
+              <i class="ph ph-phone"></i>
+              <span>Direct Booking Helpline: <strong>+1 (800) 900-GRID</strong></span>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div>
+            <form id="booking-form" data-validate>
+              <div class="form-group">
+                <label for="booking-name" class="form-label">Full Name</label>
+                <input type="text" id="booking-name" required class="form-control" placeholder="Marcus Sterling">
+              </div>
+
+              <div class="form-group">
+                <label for="booking-email" class="form-label">Email Address</label>
+                <input type="email" id="booking-email" required class="form-control" placeholder="marcus@estate.com">
+              </div>
+
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                <div class="form-group">
+                  <label for="booking-service" class="form-label">Service Focus</label>
+                  <select id="booking-service" required class="form-control">
+                    <option value="">Select Service...</option>
+                    <option value="generator-install">Generator Installation</option>
+                    <option value="inverter-stack">Inverter & Battery Stack</option>
+                    <option value="battery-diagnostics">Battery Overhaul / Replacement</option>
+                    <option value="amc-enroll">AMC Plan Enrollment</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="booking-urgency" class="form-label">System Size</label>
+                  <select id="booking-urgency" required class="form-control">
+                    <option value="">Select Size...</option>
+                    <option value="home">Residential (10kVA - 50kVA)</option>
+                    <option value="office">Corporate/Office (50kVA - 250kVA)</option>
+                    <option value="amc-plan">AMC Audit Only</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="booking-details" class="form-label">Location / System Details</label>
+                <textarea id="booking-details" required class="form-control" rows="4" placeholder="Please describe any physical space limitations or electrical details..."></textarea>
+              </div>
+
+              <div class="checkbox-group">
+                <input type="checkbox" id="booking-terms" name="terms" required>
+                <label for="booking-terms">I accept the Terms & Conditions and request engineering contact.</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Booking Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER SECTION
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
+          <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
+          <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
+          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Philosophy</a></li>
+          <li><a href="about.html#milestones" class="footer-link">Engineering Milestones</a></li>
+          <li><a href="blog.html" class="footer-link">Technical Articles</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
+        <form id="newsletter-form" data-validate class="newsletter-form">
+          <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
+          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GRID SYSTEMS. Home Generator & Inverter Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+  <!-- Page Specific Script for Tabs Filtering Interactivity -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active classes
+          tabButtons.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+
+          // Add active class to current
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          const targetPane = document.getElementById(tabId);
+          if (targetPane) {
+            targetPane.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

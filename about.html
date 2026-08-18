@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID SYSTEMS — Our Architectural & Engineering Philosophy</title>
+  <meta name="description" content="Learn about our history, our engineering standards, and the team behind our luxury backup power solutions.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Page Specific Styles for About */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: var(--space-16) auto;
+      padding: 0 var(--space-4);
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background-color: var(--border-color);
+      transform: translateX(-50%);
+    }
+    
+    html[dir="rtl"] .timeline::before {
+      left: auto;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-12);
+      width: 50%;
+      padding: 0 var(--space-8);
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    
+    html[dir="rtl"] .timeline-item:nth-child(odd) {
+      left: auto;
+      right: 0;
+      text-align: left;
+    }
+    
+    html[dir="rtl"] .timeline-item:nth-child(even) {
+      left: auto;
+      right: 50%;
+      text-align: right;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      border: 3px solid var(--bg-primary);
+      z-index: 10;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -8px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -8px;
+    }
+    
+    html[dir="rtl"] .timeline-item:nth-child(odd) .timeline-dot {
+      right: auto;
+      left: -8px;
+    }
+    
+    html[dir="rtl"] .timeline-item:nth-child(even) .timeline-dot {
+      left: auto;
+      right: -8px;
+    }
+    
+    .timeline-year {
+      font-family: var(--font-heading);
+      font-weight: var(--weight-h3);
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: var(--space-2);
+    }
+    
+    .timeline-content {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-global);
+      display: inline-block;
+      text-align: left;
+    }
+    
+    html[dir="rtl"] .timeline-content {
+      text-align: right;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+    
+    .team-member {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      overflow: hidden;
+      box-shadow: var(--shadow-global);
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    
+    .team-img-wrapper {
+      height: 320px;
+      overflow: hidden;
+      filter: grayscale(100%);
+      transition: var(--transition-smooth);
+    }
+    
+    .team-member:hover .team-img-wrapper {
+      filter: grayscale(0%);
+    }
+    
+    .team-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .team-info {
+      padding: var(--space-6);
+    }
+    
+    .team-role {
+      color: var(--accent);
+      font-size: var(--size-caption);
+      text-transform: uppercase;
+      font-weight: var(--weight-label);
+      margin-bottom: var(--space-2);
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: var(--space-4);
+      }
+      html[dir="rtl"] .timeline::before {
+        left: auto;
+        right: var(--space-4);
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: var(--space-8);
+        padding-right: 0;
+        text-align: left !important;
+        margin-bottom: var(--space-8);
+      }
+      html[dir="rtl"] .timeline-item {
+        padding-right: var(--space-8);
+        padding-left: 0;
+        text-align: right !important;
+      }
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      html[dir="rtl"] .timeline-item:nth-child(even) {
+        right: 0;
+      }
+      .timeline-dot {
+        left: calc(var(--space-4) - 8px) !important;
+      }
+      html[dir="rtl"] .timeline-dot {
+        right: calc(var(--space-4) - 8px) !important;
+        left: auto !important;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Step 4 & 5)
+       ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button class="hamburger" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== */ -->
+    <section class="page-header" style="position: relative; overflow: hidden;">
+      <div class="ambient-orb" style="top: -100px; left: 50%; transform: translateX(-50%);"></div>
+      <div class="container" style="margin-top: var(--space-12); position: relative; z-index: 2;">
+        <span class="hero-subtitle">Our Heritage</span>
+        <h1 class="hero-title" style="margin-bottom: 0;">ENGINEERING <span class="text-gold-gradient">SECURE ECOSYSTEMS</span></h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PHILOSOPHY / MISSION
+         ========================================================================== */ -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div class="about-details">
+          <span class="about-tag">Core Creed</span>
+          <h3>Form Follows Power</h3>
+          <p>
+            GRID SYSTEMS was founded by a collective of structural engineers and electrical architects who felt that backup generators and battery spaces were treated as ugly afterthought additions. We wanted to design systems with complete aesthetic synchrony.
+          </p>
+          <p>
+            Whether integrating high-voltage solar batteries inside bespoke floating panels, or designing low-decibel turbine enclosures wrapped in elegant building facade materials, we construct resilience that elevates visual style.
+          </p>
+          <p>
+            Today, we manage emergency energy architectures for over 500 premium estates and 120 office complexes, guaranteeing absolute system runtime.
+          </p>
+        </div>
+        <div class="about-visual">
+          <img src="assets/images/VILLA.jpg" alt="Technical Drawing Audit" class="about-image">
+        </div>
+      </div>
+
+      <!-- Animated Stat Counters -->
+      <div class="container">
+        <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: var(--space-12);">
+          <div class="premium-card">
+            <h3 class="text-gold-gradient" data-counter="10" data-suffix="+ Years">10+ Years</h3>
+            <span style="font-size: var(--size-caption); color: var(--text-muted);">Engineering Leadership</span>
+          </div>
+          <div class="premium-card">
+            <h3 class="text-gold-gradient" data-counter="500" data-suffix="+">500+</h3>
+            <span style="font-size: var(--size-caption); color: var(--text-muted);">Estates Managed</span>
+          </div>
+          <div class="premium-card">
+            <h3 class="text-gold-gradient" data-counter="100" data-suffix="%">100%</h3>
+            <span style="font-size: var(--size-caption); color: var(--text-muted);">Zero Outage Record</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HISTORICAL TIMELINE / MILESTONES (Step 9.4)
+         ========================================================================== */ -->
+    <section id="milestones" class="about-section" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>OUR EVOLUTION</h2>
+          <p>A timeline of technical milestones and architectural achievements.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016</div>
+            <div class="timeline-content">
+              <h4>Founding of GRID</h4>
+              <p>Established as an architectural energy consultant desk, designing bespoke backup frames for remote luxury lodges.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2019</div>
+            <div class="timeline-content">
+              <h4>Modular Inverter Vaults</h4>
+              <p>Invented modular climate-controlled battery boxes for residences, eliminating raw noise and battery odors completely.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h4>The 50dBA Threshold</h4>
+              <p>Perfected sound-dampening generator wraps, allowing high-performance diesel backup engines to run quietly near bedrooms.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <h4>Telemetry Dashboard Integration</h4>
+              <p>Launched active cloud telemetry tracking for battery cell diagnostic checks and predictive maintenance alerts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TEAM SECTION (Step 9.4 Team)
+         ========================================================================== */ -->
+    <section class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>THE ENGINEERING DESK</h2>
+          <p>Experienced leaders in structural dynamics, chemical cells, and network integration.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-member">
+            <div class="team-img-wrapper">
+              <img src="assets/images/download.jpg" alt="Arthur Cole" class="team-img">
+            </div>
+            <div class="team-info">
+              <span class="team-role">Lead Architect</span>
+              <h3 class="card-title" style="font-size: var(--size-h4);">Arthur Cole</h3>
+              <p class="card-desc">Arthur specializes in visual integration, hiding complex engines and heavy cable pathways inside structural finishes.</p>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-member">
+            <div class="team-img-wrapper">
+              <img src="assets/images/download (1).jpg" alt="Dr. Clara Mercer" class="team-img">
+            </div>
+            <div class="team-info">
+              <span class="team-role">Principal Engineer</span>
+              <h3 class="card-title" style="font-size: var(--size-h4);">Dr. Clara Mercer</h3>
+              <p class="card-desc">Clara leads physical micro-grid synchronization, writing proprietary automation scripts for automatic transitions.</p>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-member">
+            <div class="team-img-wrapper">
+              <img src="assets/images/The company gives the Best Computer AMC Service Provider in Mumbai_ When the people need a state-of-the-art technique for the repairing and maintenance, the company is the first one to be called upon_.jpg" alt="Jason Thorne" class="team-img">
+            </div>
+            <div class="team-info">
+              <span class="team-role">Battery Specialist</span>
+              <h3 class="card-title" style="font-size: var(--size-h4);">Jason Thorne</h3>
+              <p class="card-desc">Jason directs diagnostic analysis, executing cell-level battery rejuvenation and lithium-ion battery stack safety tests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
+          <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
+          <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
+          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link active">About Philosophy</a></li>
+          <li><a href="about.html#milestones" class="footer-link">Engineering Milestones</a></li>
+          <li><a href="blog.html" class="footer-link">Technical Articles</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
+        <form id="newsletter-form" data-validate class="newsletter-form">
+          <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
+          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GRID SYSTEMS. Home Generator & Inverter Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

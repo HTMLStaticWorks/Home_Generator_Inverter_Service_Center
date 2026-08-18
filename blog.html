@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID SYSTEMS — Technical Engineering Articles & Case Studies</title>
+  <meta name="description" content="Read expert articles on residential backup power, smart inverters, decibel damping, and emergency telemetry management.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Page Specific Styles for Blog */
+    .blog-search-bar {
+      max-width: 600px;
+      margin: 0 auto var(--space-8);
+      display: flex;
+      gap: var(--space-2);
+    }
+    
+    .blog-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-12);
+    }
+    
+    .filter-tag {
+      padding: var(--space-2) var(--space-4);
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      font-size: var(--size-caption);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    
+    .filter-tag.active, .filter-tag:hover {
+      background-color: var(--accent);
+      color: var(--bg-secondary);
+      border-color: var(--accent);
+    }
+    
+    .blog-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      overflow: hidden;
+      box-shadow: var(--shadow-global);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: var(--transition-smooth);
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+    
+    .blog-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .blog-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    
+    .blog-card:hover .blog-img {
+      transform: scale(1.05);
+    }
+    
+    .blog-content {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .blog-meta {
+      display: flex;
+      gap: var(--space-4);
+      font-size: var(--size-caption);
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+    
+    .blog-category {
+      background-color: var(--accent-light);
+      color: var(--accent);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-global);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: var(--weight-label);
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: var(--space-3);
+    }
+    
+    .blog-title-link:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Step 4 & 5)
+       ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button class="hamburger" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== */ -->
+    <section class="page-header" style="position: relative; overflow: hidden;">
+      <div class="ambient-orb" style="top: -100px; left: 50%; transform: translateX(-50%);"></div>
+      <div class="container" style="margin-top: var(--space-12); position: relative; z-index: 2;">
+        <span class="hero-subtitle">Engineering Desk</span>
+        <h1 class="hero-title">TECHNICAL <span class="text-gold-gradient">JOURNAL</span></h1>
+        
+        <!-- Search Bar -->
+        <div class="blog-search-bar">
+          <input type="text" placeholder="Search articles..." class="newsletter-input" aria-label="Search Articles">
+          <button class="btn btn-primary" style="padding: 0 var(--space-6);"><i class="ph ph-magnifying-glass"></i></button>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="blog-filters">
+          <span class="filter-tag active">All Articles</span>
+          <span class="filter-tag">Acoustic Shielding</span>
+          <span class="filter-tag">BMS & Lithium</span>
+          <span class="filter-tag">AMC Best Practices</span>
+          <span class="filter-tag">Solar Sync</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BLOG POSTS GRID (Step 9.5 Blog Grid)
+         ========================================================================== */ -->
+    <section class="about-section">
+      <div class="container">
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- Article 1 -->
+          <article class="blog-card">
+            <div class="blog-img-wrapper">
+              <img src="assets/images/Acoustic Panel Gaming Room Setup.jpg" alt="Generator Setup" class="blog-img">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">Acoustic Shielding</span>
+              <div class="blog-meta">
+                <span>August 10, 2026</span>
+                <span>&bull;</span>
+                <span>Dr. Clara Mercer</span>
+              </div>
+              <h3 class="card-title" style="font-size: 1.4rem; text-align: left;">
+                <a href="blog-single.html" class="blog-title-link">Integrating High-Capacity Generators In Residential Zones Safely</a>
+              </h3>
+              <p class="card-desc" style="font-size: 0.9rem; text-align: left; flex-grow: 1;">How custom air ducts and secondary structural enclosures cancel mechanical vibrations and lower noise emissions below zoning laws.</p>
+              <a href="blog-single.html" class="btn-text" style="align-self: flex-start;">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card">
+            <div class="blog-img-wrapper">
+              <img src="assets/images/Lithium Extraction Breakthrough Reduces Lithium Production Cost.jpg" alt="Lithium Array" class="blog-img">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">BMS & Lithium</span>
+              <div class="blog-meta">
+                <span>August 05, 2026</span>
+                <span>&bull;</span>
+                <span>Jason Thorne</span>
+              </div>
+              <h3 class="card-title" style="font-size: 1.4rem; text-align: left;">
+                <a href="blog-single.html" class="blog-title-link">The Transition to Smart Lithium Stacks for Estate Resiliency</a>
+              </h3>
+              <p class="card-desc" style="font-size: 0.9rem; text-align: left; flex-grow: 1;">Analyzing load transition profiles and discharge curves of modern LiFePO4 cells compared to traditional heavy lead-acid configurations.</p>
+              <a href="blog-single.html" class="btn-text" style="align-self: flex-start;">Read Article</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card">
+            <div class="blog-img-wrapper">
+              <img src="assets/images/AI predictive maintenance that turns telemetry into uptime.jpg" alt="Diagnostics" class="blog-img">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">AMC Best Practices</span>
+              <div class="blog-meta">
+                <span>July 28, 2026</span>
+                <span>&bull;</span>
+                <span>Arthur Cole</span>
+              </div>
+              <h3 class="card-title" style="font-size: 1.4rem; text-align: left;">
+                <a href="blog-single.html" class="blog-title-link">Why Telemetry Monitoring Prevents 90% of System Outages</a>
+              </h3>
+              <p class="card-desc" style="font-size: 0.9rem; text-align: left; flex-grow: 1;">A deep dive into telemetry variables — tracking fuel blockages, coolant temperature spikes, and cell-level balancing imbalances before failures.</p>
+              <a href="blog-single.html" class="btn-text" style="align-self: flex-start;">Read Article</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
+          <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
+          <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
+          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Philosophy</a></li>
+          <li><a href="about.html#milestones" class="footer-link">Engineering Milestones</a></li>
+          <li><a href="blog.html" class="footer-link active">Technical Articles</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
+        <form id="newsletter-form" data-validate class="newsletter-form">
+          <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
+          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GRID SYSTEMS. Home Generator & Inverter Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

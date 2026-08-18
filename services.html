@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID SYSTEMS — Luxury Generator & Smart Inverter Services</title>
+  <meta name="description" content="Detailed specifications of our installation services, battery replacement capabilities, AMC options, and premium coverage areas.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Page Specific Styles for Services */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+    
+    .compare-container {
+      margin-top: var(--space-12);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      box-shadow: var(--shadow-global);
+      overflow-x: auto;
+    }
+    
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg-secondary);
+      text-align: left;
+    }
+    
+    html[dir="rtl"] .compare-table {
+      text-align: right;
+    }
+    
+    .compare-table th, .compare-table td {
+      padding: var(--space-4) var(--space-6);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .compare-table th {
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: var(--weight-h4);
+    }
+    
+    /* Coverage Area Section styling */
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-16);
+      align-items: center;
+      margin-top: var(--space-12);
+    }
+    
+    .map-placeholder {
+      height: 380px;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .map-svg-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background-image: radial-gradient(var(--text-primary) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+    
+    .map-card {
+      position: relative;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-global);
+      padding: var(--space-4) var(--space-6);
+      box-shadow: var(--shadow-global);
+      z-index: 2;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .coverage-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Step 4 & 5)
+       ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button class="hamburger" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link active">Services</a></li>
+        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== */ -->
+    <section class="page-header" style="position: relative; overflow: hidden;">
+      <div class="ambient-orb" style="top: -100px; left: 50%; transform: translateX(-50%);"></div>
+      <div class="container" style="margin-top: var(--space-12); position: relative; z-index: 2;">
+        <span class="hero-subtitle">Bespoke Engineering</span>
+        <h1 class="hero-title" style="margin-bottom: 0;">TECHNICAL SYSTEM <span class="text-gold-gradient">PORTFOLIO</span></h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         DETAILED SERVICES CARDS (Step 9.3 Detailed cards)
+         ========================================================================== */ -->
+    <section class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>ELECTRICAL ENGINEERING SERVICES</h2>
+          <p>Our core configurations optimized for noise cancellation and continuous reliability.</p>
+        </div>
+
+        <div class="detail-grid">
+          <!-- Item 1 -->
+          <div class="premium-card" id="generators">
+            <div class="card-img-wrapper">
+              <img src="assets/images/Custom Built Generators_ Tailored Power for Every___.jpg" alt="Aesthetic Generator Rigging">
+            </div>
+            <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3 class="card-title">Aesthetic Generator Rigging</h3>
+            <p class="card-desc">We mount silent-enclosure diesel and gas turbine generators. Features custom exterior panels matching estate stone or panel styling, keeping noise levels under 52 dBA.</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Custom acoustic baffles</li>
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Automated transfer switches (ATS)</li>
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Eco-diesel clean burners</li>
+            </ul>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="premium-card" id="inverters">
+            <div class="card-img-wrapper">
+              <img src="assets/images/EcoFlow just dropped its new DELTA 3 Max Plus___.jpg" alt="Smart Inverters & Storage">
+            </div>
+            <div class="card-icon"><i class="fa-solid fa-car-battery"></i></div>
+            <h3 class="card-title">Smart Inverters & Storage</h3>
+            <p class="card-desc">High-capacity residential inverters integrated with custom lithium-ion battery blocks. Provides silent transition and eco solar recharging modules.</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Sub-5ms power transition</li>
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Wall-integrated visual style</li>
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Full battery BMS syncing</li>
+            </ul>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="premium-card" id="battery-service">
+            <div class="card-img-wrapper">
+              <img src="assets/images/Reliable Automotive Battery Solutions by Dial A Battery.jpg" alt="Battery Diagnostic Replacements">
+            </div>
+            <div class="card-icon"><i class="fa-solid fa-wrench"></i></div>
+            <h3 class="card-title">Battery Diagnostic Replacements</h3>
+            <p class="card-desc">Comprehensive cell health checks, automated balancing, cell rejuvenation, and certified lead-acid/lithium module installation by master technicians.</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Complete cell testing</li>
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Equalization reports</li>
+              <li><i class="ph ph-check" style="color: var(--accent);"></i> Certified green disposal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TECHNICAL COMPARISON MATRIX (Step 9.3 comparison)
+         ========================================================================== */ -->
+    <section class="about-section" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>BACKUP TECHNOLOGY COMPARISON</h2>
+          <p>Compare specifications of standard generators, lithium inverters, and sync micro-grids.</p>
+        </div>
+
+        <div class="compare-container">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>System Characteristics</th>
+                <th>APEX Diesel Generators</th>
+                <th>AURA Smart Inverters</th>
+                <th>STRATOS Hybrid Sync</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Energy Source</strong></td>
+                <td>Refined Diesel / Natural Gas</td>
+                <td>Solar Arrays / Main Grid</td>
+                <td>Solar + Battery + Diesel Sync</td>
+              </tr>
+              <tr>
+                <td><strong>Transition Speed</strong></td>
+                <td>8 to 15 Seconds (Turbine spin)</td>
+                <td>Instant (Sub 5 Milliseconds)</td>
+                <td>Instant (Zero interruption)</td>
+              </tr>
+              <tr>
+                <td><strong>Sound Emission</strong></td>
+                <td>52 dBA - 58 dBA (Whisper wrap)</td>
+                <td>0 dBA (Absolute Silence)</td>
+                <td>0 - 52 dBA (Smart active cycle)</td>
+              </tr>
+              <tr>
+                <td><strong>Expected Lifespan</strong></td>
+                <td>15,000 Operating Hours</td>
+                <td>10-15 Years (Cell life)</td>
+                <td>20+ Years Complex</td>
+              </tr>
+              <tr>
+                <td><strong>Aesthetic Form Factor</strong></td>
+                <td>Exterior Stone enclosure</td>
+                <td>Interior Wall Glass Panel</td>
+                <td>Dedicated Architectural room</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AMC CONTRACT PLANS (Step 9.3 pricing / AMC specs)
+         ========================================================================== */ -->
+    <section id="amc-plans" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>ANNUAL MAINTENANCE CONTRACT (AMC) PLANS</h2>
+          <p>Continuous engineering coverage to secure peak backup operation.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Plan 1 -->
+          <div class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/images/The company gives the Best Computer AMC Service Provider in Mumbai_ When the people need a state-of-the-art technique for the repairing and maintenance, the company is the first one to be called upon_.jpg" alt="Standard AMC">
+            </div>
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="card-title">Standard AMC</h3>
+            <span class="hero-subtitle" style="font-size: var(--size-h4); color: var(--accent); margin-bottom: var(--space-4);">$450 / Year</span>
+            <p class="card-desc">Essential care package for residential backup, featuring basic turbine checking and emergency dispatch.</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); flex-grow: 1;">
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 2 On-site audits per year</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 12-Hour dispatch SLA</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Fluid top-ups & oil checks</li>
+            </ul>
+            <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Enroll Standard</a>
+          </div>
+
+          <!-- Plan 2 -->
+          <div class="premium-card" style="border-color: var(--accent); transform: scale(1.02);">
+            <div class="card-img-wrapper">
+              <img src="assets/images/AI predictive maintenance that turns telemetry into uptime.jpg" alt="Executive AMC">
+            </div>
+            <div class="card-icon" style="background-color: var(--accent); color: #FFFFFF;"><i class="fa-solid fa-crown"></i></div>
+            <h3 class="card-title">Executive AMC</h3>
+            <span class="hero-subtitle" style="font-size: var(--size-h4); color: var(--accent); margin-bottom: var(--space-4);">$1,200 / Year</span>
+            <p class="card-desc">Recommended for high-value custom estates. Real-time active cellular telemetry tracking and fast priority response.</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); flex-grow: 1;">
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 4 On-site audits per year</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 4-Hour dispatch SLA guarantee</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Live mobile-app telemetry dashboard</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 15% Discount on replacement battery cells</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="width: 100%;">Enroll Executive</a>
+          </div>
+
+          <!-- Plan 3 -->
+          <div class="premium-card">
+            <div class="card-img-wrapper">
+              <img src="assets/images/Custom Built Generators_ Tailored Power for Every___.jpg" alt="Industrial Complex AMC">
+            </div>
+            <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
+            <h3 class="card-title">Industrial Complex AMC</h3>
+            <span class="hero-subtitle" style="font-size: var(--size-h4); color: var(--accent); margin-bottom: var(--space-4);">Custom Quote</span>
+            <p class="card-desc">Complete corporate facility coverage. Dedicated telemetry terminal dashboard and sub-hour dispatch.</p>
+            <ul style="list-style: none; text-align: left; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); flex-grow: 1;">
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Monthly dynamic load test audits</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 1-Hour emergency dispatch SLA</li>
+              <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Full battery rejuvenation warranty</li>
+            </ul>
+            <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICE AREA COVERAGE SECTION (Detailed extra requirements)
+         ========================================================================== */ -->
+    <section class="about-section" style="background-color: var(--bg-primary);">
+      <div class="container coverage-grid">
+        <!-- Map placeholder column -->
+        <div class="map-placeholder">
+          <div class="map-svg-bg"></div>
+          <div class="map-card">
+            <div class="radar-pin" style="margin-bottom: var(--space-2);">
+              <i class="ph ph-navigation-arrow" style="font-size: 2.5rem; color: var(--accent);"></i>
+            </div>
+            <h4>Active Operations Center</h4>
+            <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0;">24/7 Priority Dispatch Fleet Active</p>
+          </div>
+        </div>
+
+        <!-- Info column -->
+        <div>
+          <span class="about-tag">Local Dispatch Network</span>
+          <h3>Active Service Area Coverage</h3>
+          <p>To guarantee our rigorous AMC emergency response SLAs (under 4 hours for Executive, under 1 hour for Corporate), we maintain mobile technician fleets stationed across key luxury and business districts.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6);">
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Metro Financial Core & Downtown Offices</li>
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> West Hills & Heights Residential Enclaves</li>
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Northern coastal strip estates</li>
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Ridge Valley tech park complexes</li>
+          </ul>
+          <p style="margin-top: var(--space-6); font-size: var(--size-caption); color: var(--text-muted);">Don't see your district listed? Ask our engineering desk regarding dedicated system telemetry setups for remote estates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         QUICK BOOKING LINK
+         ========================================================================== */ -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>NEED TECHNICAL DIAGNOSTICS?</h2>
+        <p>Book an emergency inspection or system health audit today with our certified crew.</p>
+        <a href="contact.html" class="btn btn-primary">Go To Booking Desk</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
+          <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
+          <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
+          <li><a href="services.html#amc-plans" class="footer-link active">AMC Contract Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Philosophy</a></li>
+          <li><a href="about.html#milestones" class="footer-link">Engineering Milestones</a></li>
+          <li><a href="blog.html" class="footer-link">Technical Articles</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
+        <form id="newsletter-form" data-validate class="newsletter-form">
+          <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
+          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GRID SYSTEMS. Home Generator & Inverter Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

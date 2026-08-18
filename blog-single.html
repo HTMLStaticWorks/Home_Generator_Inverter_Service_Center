@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrating High-Capacity Generators In Residential Zones — GRID SYSTEMS</title>
+  <meta name="description" content="Technical review on integrating quiet residential generator systems safely.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Font Awesome & Phosphor Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/style.css">
+  <!-- Main Design Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- RTL Stylesheet -->
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Editorial Layout Styles */
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-12) var(--space-6) var(--space-16);
+    }
+    
+    .article-header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+    
+    .article-meta-group {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      font-size: var(--size-caption);
+      color: var(--text-muted);
+      margin-top: var(--space-4);
+    }
+    
+    .article-category {
+      background-color: var(--accent-light);
+      color: var(--accent);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-global);
+      text-transform: uppercase;
+      font-weight: var(--weight-label);
+      font-size: 0.8rem;
+    }
+    
+    .article-hero-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-global);
+      border: 1px solid var(--border-color);
+      margin-bottom: var(--space-12);
+    }
+    
+    .article-body h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-4);
+      font-weight: var(--weight-h2);
+    }
+    
+    .article-body p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: var(--space-8);
+      color: var(--text-secondary);
+    }
+    
+    .pullquote {
+      border-left: 4px solid var(--accent);
+      padding-left: var(--space-6);
+      margin: var(--space-12) 0;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+    
+    html[dir="rtl"] .pullquote {
+      border-left: none;
+      border-right: 4px solid var(--accent);
+      padding-left: 0;
+      padding-right: var(--space-6);
+    }
+    
+    .article-share {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--space-4) 0;
+      margin-top: var(--space-12);
+    }
+
+    @media (max-width: 768px) {
+      .article-hero-img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (Step 4 & 5)
+       ========================================================================== */ -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#amc-plans" class="nav-link">AMC Plans</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button class="hamburger" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span>
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="services.html#amc-plans" class="mobile-nav-link">AMC Plans</a></li>
+        <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div style="display: flex; gap: var(--space-4); justify-content: center; margin-bottom: var(--space-4);">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         EDITORIAL ARTICLE (Step 9.5 Single Post)
+         ========================================================================== */ -->
+    <article class="article-container" style="margin-top: 80px;">
+      <!-- Post Meta Header -->
+      <header class="article-header">
+        <span class="article-category text-gold-gradient" style="font-weight: bold;">Acoustic Engineering</span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-top: var(--space-4); margin-bottom: var(--space-6); line-height: 1.1;">Integrating High-Capacity Generators In Residential Zones Safely</h1>
+        
+        <div class="article-meta-group">
+          <span>By <strong>Dr. Clara Mercer</strong></span>
+          <span>&bull;</span>
+          <span>August 10, 2026</span>
+          <span>&bull;</span>
+          <span>6 min read</span>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <img src="assets/images/Acoustic Panel Gaming Room Setup.jpg" alt="Generator acoustic shield room details" class="article-hero-img">
+
+      <!-- Article Body Content -->
+      <div class="article-body">
+        <p>
+          High-performance backup generator installations are essential to secure luxury estates and corporate complexes during prolonged grid failures. However, standard industrial turbines emit significant structural vibrations and air noises that violate residential zoning laws and ruin living experiences. Solving this conflict requires a thorough understanding of acoustic dynamics and design integration.
+        </p>
+
+        <h2>The Physics of Acoustic Isolation</h2>
+        <p>
+          Sound levels near residential areas must generally stay below 55 dBA. Standard generators operating in open spaces easily exceed 75 dBA, which can cause significant stress. To reduce this noise, we must control both airborne sound waves and structural vibrations transmitted through the ground.
+        </p>
+
+        <div class="pullquote">
+          "Acoustic design is not simply about wrapping an engine in foam; it is about steering air flow patterns while capturing mechanical noise energy."
+        </div>
+
+        <h2>Multi-Chamber Damping Enclosures</h2>
+        <p>
+          Our engineering teams utilize multi-chamber baffled exhaust structures. Cool intake air is directed through complex s-shaped channels lined with high-density rockwool panels. This captures sound waves while maintaining cooling air flow to prevent engine overheating.
+        </p>
+        <p>
+          Additionally, we mount generator bases onto heavy steel skid plates supported by industrial rubber spring isolators. This prevents engine vibrations from travelling through concrete foundations and up structural walls.
+        </p>
+
+        <h2>Integrated Telemetry Integration</h2>
+        <p>
+          Modern acoustic management also relies on smart control. By linking quiet backup generators with real-time telemetry sensors, our AMC dashboard monitors performance and schedules load cycles. This helps ensure systems operate at peak efficiency and lowest noise levels.
+        </p>
+      </div>
+
+      <!-- Share Widget -->
+      <div class="article-share">
+        <span>Share article:</span>
+        <a href="#" class="footer-social-link" style="width:32px; height:32px;"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="footer-social-link" style="width:32px; height:32px;"><i class="ph ph-twitter-logo"></i></a>
+      </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="about-section" style="background-color: var(--bg-primary); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: var(--space-8);">
+          <h2>RELATED ARTICLES</h2>
+        </div>
+        
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <!-- Related Card 1 -->
+          <div class="blog-card">
+            <div class="blog-img-wrapper" style="height: 160px;">
+              <img src="assets/images/Lithium Extraction Breakthrough Reduces Lithium Production Cost.jpg" alt="Lithium storage" class="blog-img">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">BMS & Lithium</span>
+              <h3 class="card-title" style="font-size: 1.15rem; text-align: left;"><a href="blog-single.html" class="blog-title-link">Transitioning to Lithium stacks</a></h3>
+              <a href="blog-single.html" class="btn-text">Read Article</a>
+            </div>
+          </div>
+          
+          <!-- Related Card 2 -->
+          <div class="blog-card">
+            <div class="blog-img-wrapper" style="height: 160px;">
+              <img src="assets/images/AI predictive maintenance that turns telemetry into uptime.jpg" alt="BMS system diagnostics" class="blog-img">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">AMC Best Practices</span>
+              <h3 class="card-title" style="font-size: 1.15rem; text-align: left;"><a href="blog-single.html" class="blog-title-link">Acoustic and telemetry systems</a></h3>
+              <a href="blog-single.html" class="btn-text">Read Article</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo"><i class="ph ph-cpu"></i> GRID <span>SYSTEMS</span></div>
+        <p>Providing premium luxury generator integrations, hybrid battery-inverter microgrids, and dedicated service management for estates and office networks.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#generators" class="footer-link">Residential Generators</a></li>
+          <li><a href="services.html#inverters" class="footer-link">Smart Inverters</a></li>
+          <li><a href="services.html#battery-service" class="footer-link">Battery Replacements</a></li>
+          <li><a href="services.html#amc-plans" class="footer-link">AMC Contract Plans</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" class="footer-link">About Philosophy</a></li>
+          <li><a href="about.html#milestones" class="footer-link">Engineering Milestones</a></li>
+          <li><a href="blog.html" class="footer-link">Technical Articles</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p>Subscribe to receive architectural project showcases and technical energy reports.</p>
+        <form id="newsletter-form" data-validate class="newsletter-form">
+          <input type="email" required placeholder="Your email address" class="newsletter-input" aria-label="Newsletter Email Input">
+          <button type="submit" class="btn btn-primary" style="padding: 0 var(--space-4);"><i class="ph ph-paper-plane-right"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copyright">&copy; 2026 GRID SYSTEMS. Home Generator & Inverter Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
