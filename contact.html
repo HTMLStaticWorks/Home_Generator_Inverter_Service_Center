@@ -108,10 +108,26 @@
       box-shadow: var(--shadow-global);
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       .contact-grid {
         grid-template-columns: 1fr;
         gap: var(--space-12);
+      }
+      .contact-coordinate-list {
+        align-items: center;
+      }
+      .contact-coordinate-item {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: var(--space-2) !important;
+      }
+      .contact-coordinate-item > div {
+        text-align: center !important;
+      }
+      .contact-coordinate-item h4,
+      .contact-coordinate-item p {
+        text-align: center !important;
       }
     }
 
@@ -125,14 +141,6 @@
       }
       .contact-form-box {
         padding: var(--space-4) var(--space-3);
-      }
-      .contact-coordinate-item {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--space-1);
-      }
-      .contact-coordinate-item i {
-        margin-top: 0;
       }
       .contact-map-wrapper {
         height: 200px;
@@ -157,6 +165,7 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
@@ -195,9 +204,9 @@
       <ul class="mobile-nav-links">
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
         <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
-        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
         <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
       </ul>
@@ -333,6 +342,75 @@
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Dispatch Request</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FREQUENTLY ASKED QUESTIONS (FAQ) SECTION
+         ========================================================================== */ -->
+    <section class="about-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-header">
+          <h2>FREQUENTLY ASKED QUESTIONS</h2>
+          <p>Clear answers regarding emergency response SLAs, AMC contract tiers, solar inverter sync, and battery diagnostics.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Item 1 -->
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span>How quickly can a master technician dispatch for emergency power outages?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Our emergency dispatch response SLA depends on your service tier. Industrial Complex subscribers enjoy sub-1-hour emergency dispatch 24/7/365. Executive AMC clients receive a guaranteed 4-hour priority dispatch, and Standard AMC contracts ensure on-site presence within 12 hours.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is included in the Annual Maintenance Contract (AMC) plans?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>AMC plans include scheduled preventive audits (2 to 12 times per year depending on plan level), fluid top-ups, acoustic vibration tuning, cellular IoT telemetry tracking, and discounted replacement battery cell packs.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can smart inverters be integrated with existing solar panel arrays?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our engineering desk specializes in zero-millisecond microgrid synchronization that seamlessly pairs smart hybrid inverters with existing rooftop solar arrays, grid connections, and backup generators.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do sound-dampening enclosures lower generator noise emissions?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We build acoustic baffles and stone facade wraps engineered with high-density vibration-absorbing insulation. This reduces raw diesel engine noise down to 50–52 dBA, allowing high-power backup units to run whisper-quiet near residential bedrooms.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How often should backup generator batteries be tested or replaced?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We recommend cell-level health audits every 6 months. Active cellular telemetry monitors battery internal resistance and charge cycles 24/7, providing predictive alerts before any cell degradation occurs.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

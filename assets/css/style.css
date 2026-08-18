@@ -22,7 +22,7 @@
 
   /* Typography Sizes (Fluid clamping) */
   --size-h1: clamp(3rem, 7vw, 5.5rem);
-  --size-h2: clamp(2.25rem, 5vw, 3.75rem);
+  --size-h2: clamp(1.6rem, 3vw, 2.25rem);
   --size-h3: clamp(1.5rem, 3vw, 2.25rem);
   --size-h4: clamp(1.2rem, 2vw, 1.75rem);
   --size-body: 0.95rem;
@@ -246,8 +246,10 @@ img {
 }
 
 .section-header h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   text-align: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.02em;
 }
 
 .section-header p {
@@ -891,15 +893,16 @@ html[data-theme="light"] .hero-section {
   position: fixed;
   top: 0;
   right: -100%; /* Slide out by default */
-  width: 320px;
+  width: 340px;
+  max-width: 85vw;
   height: 100vh;
   background-color: var(--bg-secondary);
   z-index: 1050;
-  padding: var(--space-16) var(--space-8);
+  padding: var(--space-8) var(--space-6);
   box-shadow: -10px 0 40px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-6);
   transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -911,11 +914,20 @@ html[data-theme="light"] .hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-4);
+  padding-right: 48px; /* Room for top-right close button */
+  margin-bottom: var(--space-2);
+}
+
+html[dir="rtl"] .mobile-drawer-header {
+  padding-right: 0;
+  padding-left: 48px;
 }
 
 .mobile-drawer-close,
 .drawer-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 50%;
@@ -927,7 +939,14 @@ html[data-theme="light"] .hero-section {
   font-size: 1.2rem;
   color: var(--text-primary);
   cursor: pointer;
+  z-index: 10;
   transition: var(--transition-smooth);
+}
+
+html[dir="rtl"] .mobile-drawer-close,
+html[dir="rtl"] .drawer-close {
+  right: auto;
+  left: 1.25rem;
 }
 
 .mobile-drawer-close:hover,
@@ -1138,6 +1157,7 @@ html[data-theme="light"] .hero-section {
 }
 
 .about-details h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
   margin-bottom: var(--space-6);
 }
 
@@ -1897,7 +1917,27 @@ html[dir="rtl"] .compare-table {
   .nav-menu {
     gap: var(--space-6);
   }
-}/* Tablet + Mobile - Hamburger Starts HERE */
+}
+
+/* Desktop Alone - Hero Section Heading Font Size Reduction */
+@media (min-width: 1025px) {
+  .hero-title,
+  .hero-section .hero-title,
+  .hero-split-content .hero-title,
+  .soon-title {
+    font-size: clamp(2.3rem, 3.5vw, 3.15rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .page-header .hero-title,
+  .page-header h1,
+  .article-header h1 {
+    font-size: clamp(2rem, 3.1vw, 2.65rem) !important;
+    line-height: 1.18 !important;
+  }
+}
+
+/* Tablet + Mobile - Hamburger Starts HERE */
 @media (max-width: 1024px) {
   .navbar {
     height: 70px;
@@ -1912,6 +1952,17 @@ html[dir="rtl"] .compare-table {
     display: flex !important; /* Show hamburger trigger on tablet & mobile */
     align-items: center;
     justify-content: center;
+  }
+
+  .mobile-drawer-close {
+    position: absolute !important;
+    top: 1.25rem !important;
+    right: 1.25rem !important;
+  }
+  
+  html[dir="rtl"] .mobile-drawer-close {
+    right: auto !important;
+    left: 1.25rem !important;
   }
   
   .about-grid {
@@ -1957,6 +2008,18 @@ html[dir="rtl"] .compare-table {
   }
 
   .about-details h3, .services-alt-content h3, .card-title, .hero-title, .section-header h2 {
+    text-align: center !important;
+  }
+
+  .contact-coordinate-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: var(--space-2) !important;
+  }
+  .contact-coordinate-item > div,
+  .contact-coordinate-item h4,
+  .contact-coordinate-item p {
     text-align: center !important;
   }
 
@@ -2024,10 +2087,14 @@ html[dir="rtl"] .compare-table {
   }
   
   .newsletter-form {
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    gap: var(--space-2) !important;
   }
 }
 
@@ -2144,4 +2211,78 @@ html[dir="rtl"] .password-toggle-btn {
 
 .password-toggle-btn:hover {
   color: var(--accent);
+}
+
+/* ==========================================================================
+   FAQ ACCORDION STYLING
+   ========================================================================== */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.faq-item {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-global);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.faq-item.active {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(180, 140, 87, 0.15);
+}
+
+.faq-question {
+  width: 100%;
+  padding: var(--space-5) var(--space-6);
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--weight-bold-inline);
+  color: var(--text-primary);
+  cursor: pointer;
+  gap: var(--space-4);
+  transition: var(--transition-smooth);
+}
+
+html[dir="rtl"] .faq-question {
+  text-align: right;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-icon {
+  font-size: 1rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 var(--space-6);
+  color: var(--text-secondary);
+  font-size: var(--size-body);
+  line-height: 1.6;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 0 var(--space-6) var(--space-6);
 }

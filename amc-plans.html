@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" dir="ltr">
+<html lang="en" data-theme="light" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,44 +11,71 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Remove Hamburger Menu in All Views & Keep Proper Nav Bar */
+    .hamburger {
+      display: none !important;
+    }
+    
+    @media (max-width: 1024px) {
+      .navbar {
+        height: auto !important;
+        padding: var(--space-3) 0 !important;
+        flex-wrap: wrap !important;
+        gap: var(--space-3) !important;
+      }
+      
+      .nav-menu {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: var(--space-3) var(--space-4) !important;
+        justify-content: center !important;
+        width: 100% !important;
+      }
+      
+      .nav-actions {
+        display: flex !important;
+      }
+    }
+
+    /* AMC Plans Section Heading Font Size Reduction */
+    .section-header h2,
+    .cta-section h2 {
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem) !important;
+      letter-spacing: 0.02em;
+      margin-bottom: var(--space-3);
+    }
+  </style>
 </head>
 <body>
   <!-- ==========================================================================
-       HEADER & NAVIGATION BAR
+       HEADER & NAVIGATION BAR (Proper Navbar - No Hamburger in All Views)
        ========================================================================== -->
   <header class="header">
-    <div class="header-container container">
-      <a href="index.html" class="logo">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="logo">
         <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
         <span class="logo-text">GRID <span>SYSTEMS</span></span>
       </a>
 
-      <nav class="nav-desktop">
-        <ul class="nav-list">
+      <!-- Desktop & Mobile Navigation Menu (Proper Navbar) -->
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="amc-plans.html" class="nav-link active">AMC Plans</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="header-actions">
-        <button class="icon-btn" id="rtl-toggle" aria-label="Toggle RTL Direction">
-          <i class="fa-solid fa-right-left"></i>
-        </button>
-
-        <button class="icon-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-
-        <a href="login.html" class="btn btn-secondary nav-login-btn">Login</a>
-
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+      <!-- Desktop & Mobile Toggles & Actions -->
+      <div class="nav-actions">
+        <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
+        <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="login.html" class="btn btn-secondary">Login</a>
       </div>
     </div>
   </header>
@@ -70,9 +97,9 @@
       <ul class="mobile-nav-links">
         <li><a href="index.html" class="mobile-nav-link">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
         <li><a href="amc-plans.html" class="mobile-nav-link active">AMC Plans</a></li>
-        <li><a href="about.html" class="mobile-nav-link">About</a></li>
         <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
         <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
       </ul>
@@ -94,7 +121,7 @@
     <section class="page-header" style="padding-top: 140px; padding-bottom: var(--space-12); background-color: var(--bg-secondary); text-align: center; border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <span class="hero-subtitle">LONG-TERM INFRASTRUCTURE COVERAGE</span>
-        <h1 style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: var(--space-4);">ANNUAL MAINTENANCE CONTRACT (AMC) PLANS</h1>
+        <h1 class="hero-title" style="margin-bottom: var(--space-4);">ANNUAL MAINTENANCE CONTRACT (AMC) PLANS</h1>
         <p style="font-size: var(--size-lead); color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
           Continuous engineering coverage to secure peak backup operation. Priority emergency response, automated fluid rejuvenation, and live telemetry tracking.
         </p>
