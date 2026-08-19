@@ -914,20 +914,24 @@ html[data-theme="light"] .hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 48px; /* Room for top-right close button */
+  gap: var(--space-3);
+  padding-right: 0;
   margin-bottom: var(--space-2);
 }
 
 html[dir="rtl"] .mobile-drawer-header {
   padding-right: 0;
-  padding-left: 48px;
+  padding-left: 0;
 }
 
 .mobile-drawer-close,
 .drawer-close {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+  flex-shrink: 0;
+  margin-left: auto;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 50%;
@@ -945,8 +949,8 @@ html[dir="rtl"] .mobile-drawer-header {
 
 html[dir="rtl"] .mobile-drawer-close,
 html[dir="rtl"] .drawer-close {
-  right: auto;
-  left: 1.25rem;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .mobile-drawer-close:hover,
@@ -2285,4 +2289,15 @@ html[dir="rtl"] .faq-question {
 .faq-item.active .faq-answer {
   max-height: 300px;
   padding: 0 var(--space-6) var(--space-6);
+}
+
+/* ==========================================================================
+   HERO TITLE — 1024px TABLET BREAKPOINT FONT SIZE REDUCTION
+   Reduces the oversized hero heading that appears on all pages at ~1024px
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 2.75rem) !important;
+    line-height: 1.1;
+  }
 }
