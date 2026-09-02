@@ -18,24 +18,24 @@
 </head>
 <body>
 
-  <!-- Top Emergency Dispatch Bar -->
-  <div class="service-top-bar">
-    <div class="container">
-      <div class="top-bar-info">
-        <span class="top-bar-badge"><i class="fa-solid fa-headset"></i> 24/7 Service Desk</span>
-        <a href="tel:18009004743" class="top-bar-hotline"><i class="fa-solid fa-phone-volume"></i> Emergency Dispatch: +1 (800) 900-GRID</a>
-        <span class="top-bar-sla"><i class="fa-solid fa-bolt-lightning"></i> Sub-1 Hour Rapid Dispatch</span>
-      </div>
-      <div>
-        <a href="contact.html" style="color: var(--accent); text-decoration: underline; font-weight: bold;">Book On-Site Service &rarr;</a>
-      </div>
-    </div>
-  </div>
-
   <!-- ==========================================================================
        HEADER & NAVIGATION
        ========================================================================== -->
   <header class="header">
+    <!-- Top Emergency Dispatch Bar -->
+    <div class="service-top-bar">
+      <div class="container">
+        <div class="top-bar-info">
+          <span class="top-bar-badge"><i class="fa-solid fa-headset"></i> 24/7 Service Desk</span>
+          <a href="tel:18009004743" class="top-bar-hotline"><i class="fa-solid fa-phone-volume"></i> Emergency Dispatch: +1 (800) 900-GRID</a>
+          <span class="top-bar-sla"><i class="fa-solid fa-bolt-lightning"></i> Sub-1 Hour Rapid Dispatch</span>
+        </div>
+        <div>
+          <a href="contact.html" style="color: var(--accent); text-decoration: underline; font-weight: bold;">Book On-Site Service &rarr;</a>
+        </div>
+      </div>
+    </div>
+
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
         <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
@@ -46,11 +46,11 @@
       <nav class="desktop-nav">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="services.html" class="nav-link">Products & Services</a></li>
-          <li><a href="amc-plans.html" class="nav-link">AMC Plans & Pricing</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Products &amp; Services</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans &amp; Pricing</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="blog.html" class="nav-link">Technical Journal</a></li>
-          <li><a href="contact.html" class="nav-link">Service Booking</a></li>
         </ul>
       </nav>
 
@@ -58,7 +58,7 @@
       <div class="nav-actions">
         <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
         <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
-        <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;"><i class="fa-solid fa-wrench"></i> Book Repair</a>
+        <a href="login.html" class="btn btn-primary nav-login-btn">Login</a>
       </div>
 
       <!-- Mobile Hamburger Trigger -->
@@ -84,11 +84,12 @@
     <nav class="mobile-nav">
       <ul class="mobile-nav-links">
         <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
-        <li><a href="services.html" class="mobile-nav-link">Products & Services</a></li>
-        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans & Pricing</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Products &amp; Services</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans &amp; Pricing</a></li>
         <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
         <li><a href="blog.html" class="mobile-nav-link">Technical Journal</a></li>
-        <li><a href="contact.html" class="mobile-nav-link">Service Booking</a></li>
+        <li style="margin-top: var(--space-4);"><a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a></li>
       </ul>
     </nav>
 
@@ -97,7 +98,6 @@
         <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
         <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
-      <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;"><i class="fa-solid fa-wrench"></i> Book Service Now</a>
     </div>
   </aside>
 
@@ -105,7 +105,7 @@
     <!-- ==========================================================================
          HERO SECTION — Home Generator & Inverter Service Center
          ========================================================================== -->
-    <section class="hero-section" style="background-image: linear-gradient(180deg, rgba(13, 14, 16, 0.85) 0%, rgba(13, 14, 16, 0.92) 100%), url('assets/images/hero_service_center.png');">
+    <section class="hero-section">
       <div class="architectural-grid"></div>
       <div class="ambient-orb" style="top: -100px; left: -100px;"></div>
       <div class="ambient-orb" style="bottom: -100px; right: -100px;"></div>
@@ -190,7 +190,7 @@
                 <span class="spec-badge"><i class="ph ph-speaker-slash"></i> 52 dBA</span>
                 <span class="spec-badge"><i class="ph ph-gas-pump"></i> Diesel / Gas</span>
               </div>
-              <a href="contact.html?product=apex50" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order Setup</a>
+              <a href="contact.html?product=apex50" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order</a>
             </div>
           </div>
 
@@ -208,7 +208,7 @@
                 <span class="spec-badge"><i class="ph ph-battery-full"></i> 15 kWh LiFePO4</span>
                 <span class="spec-badge"><i class="ph ph-timer"></i> &lt; 5ms Transition</span>
               </div>
-              <a href="contact.html?product=aural2" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order Setup</a>
+              <a href="contact.html?product=aural2" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order</a>
             </div>
           </div>
 
@@ -226,7 +226,7 @@
                 <span class="spec-badge"><i class="ph ph-lightning"></i> 25 kVA</span>
                 <span class="spec-badge"><i class="ph ph-cpu"></i> AI Telemetry</span>
               </div>
-              <a href="contact.html?product=stratos" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order Setup</a>
+              <a href="contact.html?product=stratos" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order</a>
             </div>
           </div>
 
@@ -244,7 +244,7 @@
                 <span class="spec-badge"><i class="ph ph-shield-check"></i> Zero-Outage</span>
                 <span class="spec-badge"><i class="ph ph-wrench"></i> 24/7 Telemetry</span>
               </div>
-              <a href="contact.html?product=nexus" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order Setup</a>
+              <a href="contact.html?product=nexus" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Inquire &amp; Order</a>
             </div>
           </div>
         </div>
@@ -292,7 +292,7 @@
             <div class="card-icon"><i class="fa-solid fa-car-battery"></i></div>
             <h3 class="card-title">Battery Diagnostics &amp; Replacement</h3>
             <p class="card-desc">Cell resistance load testing, automated cell balancing, rejuvenation, and replacement with certified lead-acid or LiFePO4 batteries.</p>
-            <a href="contact.html?service=battery-service" class="btn-text">Book Battery Diagnostics</a>
+            <a href="contact.html?service=battery-service" class="btn-text">Book Battery Service</a>
           </div>
 
           <!-- Service 4 -->
@@ -417,7 +417,20 @@
          ========================================================================== -->
     <section class="about-section">
       <div class="container coverage-grid">
-        <!-- Service Dispatch Map Column -->
+        <!-- Info column (Left Side Context) -->
+        <div>
+          <span class="about-tag">Service Coverage</span>
+          <h3>Rapid Local Service Dispatch</h3>
+          <p>We operate mobile service vans equipped with advanced diagnostic meters and genuine spare parts across key residential enclaves and business districts.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6);">
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Metropolitan Residential Enclaves (Sub-1 Hr Dispatch)</li>
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Executive Hillside Villas &amp; Estates</li>
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Suburban Home Communities</li>
+            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Commercial &amp; Industrial Parks</li>
+          </ul>
+        </div>
+
+        <!-- Service Dispatch Map Column (Right Side Image) -->
         <div class="map-container" style="position: relative; border-radius: var(--radius-global); overflow: hidden; border: 1px solid var(--glass-card-border); box-shadow: var(--shadow-global);">
           <img src="assets/images/service-dispatch-map.png" alt="Active Operations Center & Dispatch Map" style="width: 100%; height: 100%; min-height: 380px; max-height: 440px; object-fit: cover; display: block;">
           <div class="map-card" style="position: absolute; bottom: 20px; left: 20px; right: 20px; background-color: var(--glass-card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); padding: var(--space-4) var(--space-6); display: flex; align-items: center; gap: var(--space-4); box-shadow: var(--shadow-global);">
@@ -429,19 +442,6 @@
               <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0; text-align: left;">12 Mobile Service Vans Stationed 24/7</p>
             </div>
           </div>
-        </div>
-
-        <!-- Info column -->
-        <div>
-          <span class="about-tag">Service Coverage</span>
-          <h3>Rapid Local Service Dispatch</h3>
-          <p>We operate mobile service vans equipped with advanced diagnostic meters and genuine spare parts across key residential enclaves and business districts.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6);">
-            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Metropolitan Residential Enclaves (Sub-1 Hr Dispatch)</li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Executive Hillside Villas &amp; Estates</li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Suburban Home Communities</li>
-            <li style="display: flex; align-items: center; gap: var(--space-2);"><i class="ph ph-map-pin" style="color: var(--accent);"></i> Commercial &amp; Industrial Parks</li>
-          </ul>
         </div>
       </div>
     </section>

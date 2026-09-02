@@ -150,10 +150,24 @@
 </head>
 <body>
 
-  <!-- ==========================================================================
-       HEADER & NAVIGATION (Step 4 & 5)
-       ========================================================================== */ -->
+   <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
   <header class="header">
+    <!-- Top Emergency Dispatch Bar -->
+    <div class="service-top-bar">
+      <div class="container">
+        <div class="top-bar-info">
+          <span class="top-bar-badge"><i class="fa-solid fa-headset"></i> 24/7 Service Desk</span>
+          <a href="tel:18009004743" class="top-bar-hotline"><i class="fa-solid fa-phone-volume"></i> Emergency Dispatch: +1 (800) 900-GRID</a>
+          <span class="top-bar-sla"><i class="fa-solid fa-bolt-lightning"></i> Sub-1 Hour Rapid Dispatch</span>
+        </div>
+        <div>
+          <a href="contact.html" style="color: var(--accent); text-decoration: underline; font-weight: bold;">Book On-Site Service &rarr;</a>
+        </div>
+      </div>
+    </div>
+
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
         <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
@@ -163,13 +177,12 @@
       <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav">
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="services.html" class="nav-link">Products &amp; Services</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans &amp; Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="blog.html" class="nav-link">Technical Journal</a></li>
         </ul>
       </nav>
 
@@ -177,7 +190,7 @@
       <div class="nav-actions">
         <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
         <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
-        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="login.html" class="btn btn-primary nav-login-btn">Login</a>
       </div>
 
       <!-- Mobile Hamburger Trigger -->
@@ -202,13 +215,13 @@
     
     <nav class="mobile-nav">
       <ul class="mobile-nav-links">
-        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
-        <li><a href="about.html" class="mobile-nav-link">About</a></li>
-        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
-        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
-        <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Products &amp; Services</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans &amp; Pricing</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Technical Journal</a></li>
+        <li style="margin-top: var(--space-4);"><a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a></li>
       </ul>
     </nav>
 
@@ -217,7 +230,6 @@
         <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
         <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
-      <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Login</a>
     </div>
   </aside>
 
@@ -281,7 +293,7 @@
           </ul>
 
           <!-- Social Media Channels -->
-          <div class="contact-socials-wrapper" style="margin-bottom: var(--space-6);">
+          <div class="contact-socials-wrapper">
             <h4 style="font-size: 0.95rem; margin-bottom: var(--space-3); color: var(--text-primary); text-align: left;">Connect With Our Engineering Desk</h4>
             <div class="footer-socials" style="margin-top: 0;">
               <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -289,22 +301,6 @@
               <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
               <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-          </div>
-
-          <!-- Live Interactive Map Container -->
-          <div class="contact-map-wrapper" style="height: 320px; position: relative; border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); overflow: hidden; margin-top: var(--space-8); box-shadow: var(--shadow-global);">
-            <iframe src="https://maps.google.com/maps?q=100%205th%20Ave%20New%20York&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; filter: contrast(1.05) saturate(1.1); display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="GRID Operational Hub Location Map"></iframe>
-            
-            <!-- Glassmorphism Floating Map Badge -->
-            <div class="map-marker-pin" style="position: absolute; bottom: 15px; left: 15px; right: 15px; background-color: var(--glass-card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); padding: var(--space-3) var(--space-4); display: flex; align-items: center; gap: var(--space-3); z-index: 5; box-shadow: var(--shadow-global);">
-              <div style="width: 38px; height: 38px; border-radius: 50%; background-color: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--accent);">
-                <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 1.1rem;"></i>
-              </div>
-              <div style="text-align: left;">
-                <h4 style="font-size: 0.95rem; margin-bottom: 2px; color: var(--text-primary);">GRID Operational Hub</h4>
-                <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0;">Technicians Dispatch Active 24/7</p>
-              </div>
             </div>
           </div>
         </div>
@@ -353,6 +349,32 @@
     </section>
 
     <!-- ==========================================================================
+         LIVE OPERATIONAL HUB MAP SECTION (Placed directly ABOVE FAQ Section)
+         ========================================================================== */ -->
+    <section class="about-section" style="padding-top: var(--space-8); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: var(--space-6);">
+          <h2>LIVE OPERATIONAL HUB LOCATION</h2>
+          <p>Visit our engineering headquarters or monitor dispatch radius across metro districts.</p>
+        </div>
+        <div class="contact-map-wrapper" style="height: 380px; position: relative; border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); overflow: hidden; box-shadow: var(--shadow-global);">
+          <iframe src="https://maps.google.com/maps?q=100%205th%20Ave%20New%20York&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; filter: contrast(1.05) saturate(1.1); display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="GRID Operational Hub Location Map"></iframe>
+          
+          <!-- Glassmorphism Floating Map Badge -->
+          <div class="map-marker-pin" style="position: absolute; bottom: 15px; left: 15px; right: 15px; background-color: var(--glass-card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-card-border); border-radius: var(--radius-global); padding: var(--space-3) var(--space-4); display: flex; align-items: center; gap: var(--space-3); z-index: 5; box-shadow: var(--shadow-global);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--accent);">
+              <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 1.1rem;"></i>
+            </div>
+            <div style="text-align: left;">
+              <h4 style="font-size: 0.95rem; margin-bottom: 2px; color: var(--text-primary);">GRID Operational Hub</h4>
+              <p style="font-size: var(--size-caption); color: var(--text-muted); margin-bottom: 0;">Technicians Dispatch Active 24/7</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          FREQUENTLY ASKED QUESTIONS (FAQ) SECTION
          ========================================================================== */ -->
     <section class="about-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
@@ -364,8 +386,8 @@
 
         <div class="faq-accordion">
           <!-- Item 1 -->
-          <div class="faq-item active">
-            <button class="faq-question" aria-expanded="true">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
               <span>How quickly can a master technician dispatch for emergency power outages?</span>
               <i class="fa-solid fa-chevron-down faq-icon"></i>
             </button>

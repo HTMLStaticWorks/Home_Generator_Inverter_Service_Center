@@ -220,10 +220,25 @@
 </head>
 <body>
 
+
   <!-- ==========================================================================
-       HEADER & NAVIGATION (Step 4 & 5)
-       ========================================================================== */ -->
+       HEADER & NAVIGATION
+       ========================================================================== -->
   <header class="header">
+    <!-- Top Emergency Dispatch Bar -->
+    <div class="service-top-bar">
+      <div class="container">
+        <div class="top-bar-info">
+          <span class="top-bar-badge"><i class="fa-solid fa-headset"></i> 24/7 Service Desk</span>
+          <a href="tel:18009004743" class="top-bar-hotline"><i class="fa-solid fa-phone-volume"></i> Emergency Dispatch: +1 (800) 900-GRID</a>
+          <span class="top-bar-sla"><i class="fa-solid fa-bolt-lightning"></i> Sub-1 Hour Rapid Dispatch</span>
+        </div>
+        <div>
+          <a href="contact.html" style="color: var(--accent); text-decoration: underline; font-weight: bold;">Book On-Site Service &rarr;</a>
+        </div>
+      </div>
+    </div>
+
     <div class="container navbar">
       <a href="index.html" class="logo" id="logo">
         <img src="assets/images/logo-icon.svg" alt="GRID SYSTEMS Logo" class="brand-logo-icon">
@@ -233,13 +248,12 @@
       <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav">
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="amc-plans.html" class="nav-link">AMC Plans</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="services.html" class="nav-link">Products &amp; Services</a></li>
+          <li><a href="amc-plans.html" class="nav-link">AMC Plans &amp; Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="blog.html" class="nav-link">Technical Journal</a></li>
         </ul>
       </nav>
 
@@ -247,7 +261,7 @@
       <div class="nav-actions">
         <button class="toggle-btn rtl-toggle" aria-label="Toggle Direction">⇆</button>
         <button class="toggle-btn theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
-        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="login.html" class="btn btn-primary nav-login-btn">Login</a>
       </div>
 
       <!-- Mobile Hamburger Trigger -->
@@ -272,13 +286,13 @@
     
     <nav class="mobile-nav">
       <ul class="mobile-nav-links">
-        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
         <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
-        <li><a href="about.html" class="mobile-nav-link active">About</a></li>
-        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans</a></li>
-        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
-        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Products &amp; Services</a></li>
+        <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans &amp; Pricing</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Technical Journal</a></li>
+        <li style="margin-top: var(--space-4);"><a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a></li>
       </ul>
     </nav>
 
@@ -287,7 +301,6 @@
         <button class="btn btn-secondary rtl-toggle" aria-label="Toggle Direction" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-right-left"></i> RTL Mode</button>
         <button class="btn btn-secondary theme-toggle" aria-label="Toggle Theme" style="width: 100%; padding: 0.6rem; font-size: 0.85rem; justify-content: center;"><i class="fa-solid fa-moon"></i> Theme</button>
       </div>
-      <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Login</a>
     </div>
   </aside>
 
