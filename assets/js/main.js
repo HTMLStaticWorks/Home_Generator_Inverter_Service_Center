@@ -215,6 +215,28 @@ function initNavbar() {
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
   if (backdrop) backdrop.addEventListener('click', closeMenu);
 
+  // Automatically highlight active navbar links based on current page URL
+  const currentFilename = window.location.pathname.split('/').pop() || 'index.html';
+  const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  
+  if (allNavLinks.length > 0) {
+    allNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const linkFilename = href.split('/').pop().split('#')[0];
+      
+      const isMatch = (currentFilename === '' && linkFilename === 'index.html') ||
+                      (currentFilename === linkFilename) ||
+                      (currentFilename === 'blog-single.html' && linkFilename === 'blog.html');
+
+      if (isMatch) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
   // Close drawer if viewport goes past 1024px
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1024) {

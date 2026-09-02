@@ -22,7 +22,8 @@
       grid-template-columns: 1.2fr 0.8fr;
       min-height: 100vh;
       background-color: var(--bg-primary);
-      padding-top: 80px;
+      padding-top: 140px;
+      box-sizing: border-box;
     }
     
     .hero-split-content {
@@ -88,7 +89,8 @@
     }
     
     .tab-pane.active {
-      display: grid;
+      display: block;
+      width: 100%;
       animation: fadeIn 0.6s ease-in-out forwards;
     }
     
@@ -99,6 +101,7 @@
       border: 1px solid var(--border-color);
       border-radius: var(--radius-global);
       box-shadow: var(--shadow-global);
+      -webkit-overflow-scrolling: touch;
     }
     
     .amc-table {
@@ -242,32 +245,55 @@
 
     @media (max-width: 1024px) {
       .hero-split {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         height: auto;
+        min-height: auto;
+        padding-top: 110px;
       }
       .hero-split-image {
-        height: 400px;
+        width: 100%;
+        height: 350px;
       }
       .services-alt-row {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--space-6);
+        direction: ltr !important;
       }
       .services-alt-row:nth-child(even) {
-        direction: ltr;
+        direction: ltr !important;
+      }
+      .services-alt-row:nth-child(even) .services-alt-content {
+        direction: ltr !important;
       }
       .services-alt-image {
-        height: 300px;
+        width: 100%;
+        height: 280px;
       }
       .booking-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--space-8);
       }
       .timeline-steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-8);
       }
       .timeline-step-item::after {
         display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .timeline-steps {
+        grid-template-columns: 1fr;
+      }
+      .hero-split-image {
+        height: 250px;
+      }
+      .booking-grid .form-row {
+        grid-template-columns: 1fr !important;
       }
     }
 
@@ -313,12 +339,13 @@
       <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav">
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link active">Home 2</a></li>
           <li><a href="services.html" class="nav-link">Products &amp; Services</a></li>
           <li><a href="amc-plans.html" class="nav-link">AMC Plans &amp; Pricing</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="blog.html" class="nav-link">Technical Journal</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
       </nav>
 
@@ -351,12 +378,13 @@
     
     <nav class="mobile-nav">
       <ul class="mobile-nav-links">
-        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
-        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link active">Home 2</a></li>
         <li><a href="services.html" class="mobile-nav-link">Products &amp; Services</a></li>
         <li><a href="amc-plans.html" class="mobile-nav-link">AMC Plans &amp; Pricing</a></li>
         <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
         <li><a href="blog.html" class="mobile-nav-link">Technical Journal</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
         <li style="margin-top: var(--space-4);"><a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a></li>
       </ul>
     </nav>

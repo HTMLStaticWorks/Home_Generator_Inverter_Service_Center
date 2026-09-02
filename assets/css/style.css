@@ -293,10 +293,12 @@ img {
   align-items: center; /* Centered layout for card contents */
   text-align: center;
   height: 100%;
+  min-height: 100%;
   box-shadow: var(--shadow-global);
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .premium-card::before {
@@ -634,6 +636,7 @@ img {
   text-transform: uppercase;
   font-size: 0.85rem;
   white-space: nowrap;
+  margin-top: auto;
 }
 
 .btn-text::after {
@@ -2286,41 +2289,45 @@ html[dir="rtl"] .footer-link:hover {
   }
 }
 
-/* 768px & 1024px Tablet Grid Layouts (Equal Sizes & Centered Leftover Cards) */
+/* Responsive Grid System (Guarantees Equal Height Cards Across All Devices) */
 .card-grid, .product-grid, .detail-grid, .team-grid {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  align-items: stretch !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   gap: var(--space-8) !important;
+  align-items: stretch !important;
 }
 
 .card-grid > *, .product-grid > *, .detail-grid > *, .team-grid > * {
-  flex: 0 0 calc(33.333% - var(--space-8)) !important;
-  width: calc(33.333% - var(--space-8)) !important;
-  max-width: 380px !important;
-  min-width: 280px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
   box-sizing: border-box !important;
+}
+
+@media (min-width: 1025px) {
+  .detail-grid, .card-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .product-grid, .card-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
 }
 
 @media (max-width: 1024px) {
   .card-grid, .product-grid, .detail-grid, .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: var(--space-6) !important;
-  }
-
-  .card-grid > *, .product-grid > *, .detail-grid > *, .team-grid > * {
-    flex: 0 0 calc(50% - var(--space-6)) !important;
-    width: calc(50% - var(--space-6)) !important;
-    max-width: 440px !important;
-    min-width: 280px !important;
   }
 }
 
 @media (max-width: 639px) {
-  .card-grid > *, .product-grid > *, .detail-grid > *, .team-grid > * {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
+  .card-grid, .product-grid, .detail-grid, .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
   }
 }
 
@@ -2706,13 +2713,11 @@ html[dir="rtl"] .faq-question {
     font-size: 0.75rem !important;
     padding: 4px 0 !important;
   }
-  .top-bar-sla,
-  .service-top-bar div:last-child {
+  .top-bar-sla {
     display: none !important;
   }
   .service-top-bar .container {
-    justify-content: center !important;
-    text-align: center !important;
+    justify-content: space-between !important;
   }
 }
 
@@ -3071,12 +3076,30 @@ html[dir="rtl"] .faq-question {
   flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .support-banner {
     flex-direction: column;
     text-align: center;
     padding: var(--space-8) var(--space-6);
   }
+  .support-banner > div:first-child {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .support-banner h3,
+  .support-banner p {
+    text-align: center !important;
+  }
+  .support-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
   .support-actions {
     flex-direction: column;
     width: 100%;
@@ -3126,9 +3149,14 @@ html[dir="rtl"] .faq-question {
   text-align: center !important;
   font-size: 1.35rem !important;
   font-weight: var(--weight-h2) !important;
-  margin-bottom: var(--space-6) !important;
+  margin-top: var(--space-2) !important;
+  margin-bottom: var(--space-8) !important;
   color: var(--text-primary) !important;
   letter-spacing: 0.02em !important;
+}
+
+.auth-container form {
+  margin-top: var(--space-4) !important;
 }
 
 .oauth-divider {
