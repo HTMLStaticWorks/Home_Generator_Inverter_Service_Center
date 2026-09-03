@@ -624,6 +624,26 @@ img {
   transform: translateY(-2px);
 }
 
+/* Ensure all card CTA buttons across pricing and service grids have identical height, padding, font-size and alignment */
+.premium-card .btn,
+.product-card .btn,
+.showcase-card .btn,
+.process-card .btn {
+  width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  padding: 0 1rem !important;
+  font-size: 0.85rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+  margin-top: auto !important;
+}
+
 .btn-text {
   background: none;
   border: none;
@@ -858,7 +878,7 @@ img {
 .hero-section {
   position: relative;
   min-height: 100vh;
-  padding-top: 140px;
+  padding-top: clamp(165px, 22vh, 200px);
   padding-bottom: var(--space-16);
   display: flex;
   align-items: center;
@@ -930,7 +950,7 @@ img {
   position: relative;
   overflow: hidden;
   min-height: 360px;
-  padding-top: 140px;
+  padding-top: clamp(165px, 20vh, 190px);
   padding-bottom: var(--space-12);
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
@@ -982,7 +1002,7 @@ img {
 @media (max-width: 768px) {
   .page-header {
     min-height: 300px;
-    padding-top: 110px;
+    padding-top: 140px;
     padding-bottom: var(--space-8);
   }
 }
@@ -1133,20 +1153,9 @@ html[dir="rtl"] .drawer-close {
 /* ==========================================================================
    HERO / REVEAL ANIMATIONS (Step 11)
    ========================================================================== */
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-primary);
-  overflow: hidden;
-  padding-top: 100px;
-}
-
 /* Hero Split Section Layout & Spacing (Home 2) */
 .hero-split {
-  padding-top: 130px;
+  padding-top: clamp(165px, 20vh, 190px);
   padding-bottom: var(--space-12);
   display: flex;
   flex-direction: column;
@@ -1185,7 +1194,7 @@ html[dir="rtl"] .drawer-close {
     grid-template-columns: 1fr 1fr !important;
     gap: var(--space-12) !important;
     align-items: center !important;
-    padding-top: 140px;
+    padding-top: clamp(170px, 22vh, 200px);
     padding-bottom: var(--space-16);
   }
   .hero-actions {
