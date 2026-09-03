@@ -179,6 +179,19 @@
       margin-bottom: var(--space-2);
     }
 
+    @media (min-width: 640px) and (max-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--space-6) !important;
+      }
+      .team-grid > *:last-child:nth-child(2n+1) {
+        grid-column: 1 / -1 !important;
+        justify-self: center !important;
+        width: calc((100% - var(--space-6)) / 2) !important;
+        max-width: 100% !important;
+      }
+    }
+
     @media (max-width: 768px) {
       .timeline::before {
         left: var(--space-4);
@@ -212,8 +225,11 @@
         right: calc(var(--space-4) - 8px) !important;
         left: auto !important;
       }
+    }
+
+    @media (max-width: 639px) {
       .team-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
       }
     }
   </style>
@@ -347,7 +363,7 @@
 
       <!-- Animated Stat Counters -->
       <div class="container">
-        <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: var(--space-12);">
+        <div class="card-grid" style="margin-top: var(--space-12);">
           <div class="premium-card">
             <h3 class="text-gold-gradient" data-counter="10" data-suffix="+ Years">10+ Years</h3>
             <span style="font-size: var(--size-caption); color: var(--text-muted);">Engineering Leadership</span>

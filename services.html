@@ -95,13 +95,26 @@
       text-align: center;
     }
 
-    @media (max-width: 1024px) {
+    @media (min-width: 640px) and (max-width: 1024px) {
       .detail-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--space-6) !important;
+      }
+      .detail-grid > *:last-child:nth-child(2n+1) {
+        grid-column: 1 / -1 !important;
+        justify-self: center !important;
+        width: calc((100% - var(--space-6)) / 2) !important;
+        max-width: 100% !important;
       }
       .coverage-grid {
         grid-template-columns: 1fr;
         gap: var(--space-8);
+      }
+    }
+
+    @media (max-width: 639px) {
+      .detail-grid {
+        grid-template-columns: 1fr !important;
       }
     }
 

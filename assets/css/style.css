@@ -2309,18 +2309,37 @@ html[dir="rtl"] .footer-link:hover {
 }
 
 @media (min-width: 1025px) {
-  .detail-grid, .card-grid {
+  .detail-grid, .card-grid, .product-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
-  .product-grid, .card-grid-4 {
+  .card-grid-4 {
     grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  /* Center single last card in 3-column desktop grids (e.g. 4th item in a 4-card set) */
+  .card-grid > *:last-child:nth-child(3n+1),
+  .product-grid > *:last-child:nth-child(3n+1),
+  .detail-grid > *:last-child:nth-child(3n+1) {
+    grid-column: 2 !important;
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .card-grid, .product-grid, .detail-grid, .team-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: var(--space-6) !important;
+  }
+
+  /* Center single last card in 2-column tablet grids (768px & 1024px viewports for 3-card sets) */
+  .card-grid > *:last-child:nth-child(2n+1),
+  .product-grid > *:last-child:nth-child(2n+1),
+  .detail-grid > *:last-child:nth-child(2n+1),
+  .team-grid > *:last-child:nth-child(2n+1),
+  .tab-pane .card-grid > *:last-child:nth-child(2n+1) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: calc((100% - var(--space-6)) / 2) !important;
+    max-width: 100% !important;
   }
 }
 
@@ -2813,11 +2832,6 @@ html[dir="rtl"] .faq-question {
 
 /* Product Cards & Technical Specs */
 .product-grid {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  align-items: stretch !important;
-  gap: var(--space-8);
   margin-top: var(--space-4);
 }
 
